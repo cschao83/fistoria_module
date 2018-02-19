@@ -2,13 +2,12 @@
 
 from openerp import models, fields, api
 
-class fi_shopplace(models.Model):
+class fi_cashplace(models.Model):
 
-    _name='fi.shopplace'
-    _description='Puestos'
+    _name='fi.cashplace'
+    _description='Cajas'
 
     name = fields.Char(string='Name')
-    artisan = fields.Boolean('Artesano')
     campaign_id = fields.Many2one('fi.campaign',string="Fiesta",required=True)
     state = fields.Selection([('activo','Activo'),('cerrado','Cerrado')],default='activo')
 

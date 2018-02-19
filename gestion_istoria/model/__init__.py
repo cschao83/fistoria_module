@@ -38,6 +38,7 @@ from . import fi_entry_type
 from . import fi_money_type
 from . import fi_payment_type
 from . import fi_shopplace
+from . import fi_cashplace
 from . import fi_campaign
 from . import res_partner
 

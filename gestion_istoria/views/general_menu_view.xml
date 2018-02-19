@@ -3,39 +3,54 @@
 	<data>
 		
 		<!-- menu actions -->
+		<act_window id="action_all_contacts_list" name="Contactos" res_model="res.partner" view_mode="tree,form" />
 		<act_window id="action_clients_list" name="Clientes" res_model="res.partner" domain="[('customer','=','true')]" view_mode="tree,form" />
 		<act_window id="action_artisans_list" name="Artesanos" res_model="res.partner" domain="[('artisan','=','true')]" view_mode="tree,form" />
 		<act_window id="action_suppliers_list" name="Proveedores" res_model="res.partner" domain="[('supplier','=','true')]" view_mode="tree,form" />
 		<act_window id="action_volunteers_list" name="Voluntarios" res_model="res.partner" domain="[('volunteer','=','true')]" view_mode="tree,form" />
 		
-		<!-- Menu Events -->
+		<!-- Menu Global -->
 		<act_window id="action_campaigns_list" name="Fiestas" res_model="fi.campaign" view_mode="tree,form" />
-		<act_window id="action_shopplaces_list" name="Puestos" res_model="fi.shopplace" view_mode="tree,form" />
+		
+		<!-- Menu ShopPlaces -->
+		<act_window id="action_shopplaces_list" name="Puestos Ordinarios" res_model="fi.shopplace" domain="[('artisan','=','false')]" view_mode="tree,form" />
+		<act_window id="action_artisans_shopplaces_list" name="Puestos Artesanos" res_model="fi.shopplace" domain="[('artisan','=','true')]" view_mode="tree,form" />
+		
+		<!-- Menu Bancos -->
+		<act_window id="action_cashplaces_list" name="Cajas" res_model="fi.cashplace" view_mode="tree,form" />
 		
 		<!-- Menu Config -->
-		<act_window id="action_artisan_types_list" name="Tipo de Artesanos" res_model="fi.artisan.type" view_mode="tree,form" />
-		<act_window id="action_entry_types_list" name="Tipo de Ingresos" res_model="fi.entry.type" view_mode="tree,form" />
-		<act_window id="action_money_types_list" name="Tipo de Monedas" res_model="fi.money.type" view_mode="tree,form" />
+		<act_window id="action_artisan_types_list" name="Tipos de Artesano" res_model="fi.artisan.type" view_mode="tree,form" />
+		<act_window id="action_entry_types_list" name="Tipos de Ingreso" res_model="fi.entry.type" view_mode="tree,form" />
+		<act_window id="action_payment_types_list" name="Tipos de Pago" res_model="fi.payment.type" view_mode="tree,form" />
+		<act_window id="action_money_types_list" name="Tipos de Moneda" res_model="fi.money.type" view_mode="tree,form" />
 			
 	
 		<!-- menu structure -->
 		<menuitem id="root_menu_fi_management"	name="Herramienta de Gestión" sequence="70" />
-		
-		
-		<menuitem id="fi_management_contacts" name="Contactos" parent="root_menu_fi_management" sequence="0"/>
-			<menuitem id="fi_mngmt_clients" name="Clientes" action="action_clients_list" parent="fi_management_contacts" sequence="1" />			
-			<menuitem id="fi_mngmt_artisans" name="Artesanos" action="action_artisans_list" parent="fi_management_contacts" sequence="2"/>
-			<menuitem id="fi_mngmt_suppliers" name="Proveedores" action="action_suppliers_list" parent="fi_management_contacts" sequence="3"/>
-			<menuitem id="fi_mngmt_volunteers" name="Voluntarios" action="action_volunteers_list" parent="fi_management_contacts" sequence="4" />  
-		
-		<menuitem id="fi_management_events" name="Gestión de Fiesta" parent="root_menu_fi_management" sequence="5"/>
-			<menuitem id="fi_mngmt_events" name="Fiestas" action="action_campaigns_list" parent="fi_management_events" sequence="1" />			
-			<menuitem id="fi_mngmt_shopplaces" name="Puestos" action="action_shopplaces_list" parent="fi_management_events" sequence="2"/>	
 	
-		<menuitem id="fi_config" name="Configuración" parent="root_menu_fi_management" sequence="40"/>
-			<menuitem id="fi_artisan_types" name="Tipo de Artesanos" action="action_artisan_types_list" parent="fi_config" sequence="1" />			
-			<menuitem id="fi_entry_types" name="Tipo de Ingresos" action="action_entry_types_list" parent="fi_config" sequence="2" />
-			<menuitem id="fi_money_types" name="Tipo de Monedas" action="action_money_types_list" parent="fi_config" sequence="3" />
+		<menuitem id="fi_management_events" name="Gestión de Global" parent="root_menu_fi_management" sequence="1"/>
+			<menuitem id="fi_mngmt_events" name="Fiestas" action="action_campaigns_list" parent="fi_management_events" sequence="1" />			
+		
+		<menuitem id="fi_management_contacts" name="Agenda de Contactos" parent="root_menu_fi_management" sequence="2"/>
+			<menuitem id="fi_mngmt_all_contacts" name="Todos los contactos" action="action_all_contacts_list" parent="fi_management_contacts" sequence="1" />
+			<menuitem id="fi_mngmt_clients" name="Clientes" action="action_clients_list" parent="fi_management_contacts" sequence="2" />			
+			<menuitem id="fi_mngmt_artisans" name="Artesanos" action="action_artisans_list" parent="fi_management_contacts" sequence="3"/>
+			<menuitem id="fi_mngmt_suppliers" name="Proveedores" action="action_suppliers_list" parent="fi_management_contacts" sequence="4"/>
+			<menuitem id="fi_mngmt_volunteers" name="Voluntarios" action="action_volunteers_list" parent="fi_management_contacts" sequence="5" />  
+		
+		<menuitem id="fi_management_places" name="Gestión de Puestos" parent="root_menu_fi_management" sequence="3"/>
+			<menuitem id="fi_mngmt_shopplaces" name="Puestos Ordinarios" action="action_shopplaces_list" parent="fi_management_places" sequence="1"/>
+			<menuitem id="fi_mngmt_artisans_shopplaces" name="Puestos Artesanos" action="action_artisans_shopplaces_list" parent="fi_management_places" sequence="2"/>
+
+		<menuitem id="fi_management_bank" name="Banco" parent="root_menu_fi_management" sequence="4"/>
+			<menuitem id="fi_mngmt_cashplaces" name="Cajas" action="action_cashplaces_list" parent="fi_management_bank" sequence="1"/>	
+	
+		<menuitem id="fi_config" name="Tablas Maestras" parent="root_menu_fi_management" sequence="40"/>
+			<menuitem id="fi_artisan_types" name="Tipos de Artesano" action="action_artisan_types_list" parent="fi_config" sequence="1" />			
+			<menuitem id="fi_entry_types" name="Tipos de Ingreso" action="action_entry_types_list" parent="fi_config" sequence="2" />
+			<menuitem id="fi_payment_types" name="Tipos de Pago" action="action_payment_types_list" parent="fi_config" sequence="3" />
+			<menuitem id="fi_money_types" name="Tipos de Moneda" action="action_money_types_list" parent="fi_config" sequence="4" />
 	
 	</data>
 </openerp>

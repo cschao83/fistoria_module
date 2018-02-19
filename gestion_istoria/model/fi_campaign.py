@@ -49,6 +49,7 @@ class fi_campaign(models.Model):
     name = fields.Char("Nombre")
     event_date = fields.Date("Fecha")
     shopplaces = fields.One2many('fi.shopplace','campaign_id',copy=True)
+    cashplaces = fields.One2many('fi.cashplace','campaign_id',copy=True)
     total_shops = fields.Integer("Puestos")
     total_artisans = fields.Integer("Artesanos")
     amount_money = fields.Float("Total cambiado en bancos (€)")

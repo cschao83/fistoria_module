@@ -34,8 +34,13 @@
                     	<page string="Notes">
                         	<field name="notes"/>    
                         </page>
-                        <page string="Puestos">
+                        <page string="Resumen de Puestos">
                         	<field name="shopplaces" readonly="True">
+                        		<field name="name" />
+                        	</field>
+                        </page>
+                        <page string="Resumen de Cajas">
+                        	<field name="cashplaces" readonly="True">
                         		<field name="name" />
                         	</field>
                         </page>
