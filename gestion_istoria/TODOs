@@ -1,0 +1,4 @@
+En la ficha de res.partner:
+- Eliminar la pestaña de Ventas & Compras
+- Crear una nueva pestaña con el tipo de contacto: Cliente, Voluntario, Artesano, Proveedor.
+- Añadir el campo DNI
