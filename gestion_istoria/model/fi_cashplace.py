@@ -7,7 +7,7 @@ class fi_cashplace(models.Model):
     _name='fi.cashplace'
     _description='Cajas'
 
-    name = fields.Char(string='Name')
+    name = fields.Char(string='Nombre')
     campaign_id = fields.Many2one('fi.campaign',string="Fiesta",required=True)
     state = fields.Selection([('activo','Activo'),('cerrado','Cerrado')],default='activo')
 

@@ -40,9 +40,7 @@
                         	</field>
                         </page>
                         <page string="Resumen de Cajas">
-                        	<field name="cashplaces" readonly="True">
-                        		<field name="name" />
-                        	</field>
+                        	<field name="cashplaces" widget="one2many" />
                         </page>
                     </notebook>
     			</sheet>

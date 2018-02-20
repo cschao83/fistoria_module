@@ -4,6 +4,7 @@ encoding//gestion_istoria/__openerp__.py=utf-8
 encoding//gestion_istoria/model/__init__.py=utf-8
 encoding//gestion_istoria/model/fi_artisan_type.py=utf-8
 encoding//gestion_istoria/model/fi_campaign.py=utf-8
+encoding//gestion_istoria/model/fi_cashplace.py=utf-8
 encoding//gestion_istoria/model/fi_entry_type.py=utf-8
 encoding//gestion_istoria/model/fi_money_type.py=utf-8
 encoding//gestion_istoria/model/fi_payment_type.py=utf-8

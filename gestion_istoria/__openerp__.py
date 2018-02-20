@@ -59,7 +59,8 @@
 
              # Views
              'views/partners_view.xml',
-             'views/campaign_view.xml',
+             'views/fi_shopplace_view.xml',
+             'views/fi_campaign_view.xml',
              'views/general_menu_view.xml',
         ],
 

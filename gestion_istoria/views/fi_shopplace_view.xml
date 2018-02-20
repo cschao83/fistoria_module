@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="fi_shopplace_form_view" model="ir.ui.view">
+			<field name="name">fi.shopplace.form.view</field>
+			<field name="model">fi.shopplace</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Etiqueta GS">
+				<header>
+                	<field name="state" widget="statusbar" nolabel="1" />    
+                </header>
+				<sheet>
+					<h1>
+                        <label string="Datos del puesto"/>
+                    </h1>
+					<group>
+						<group>
+							<field name="name"			/>
+							<field name="partner_id"	/>
+							<field name="campaign_id" readonly="True"/>
+						</group>
+						<group>
+							<field name="artisan" />
+						</group>
+    				</group>
+					<notebook colspan="4">
+                    	<page string="Notes">
+                        	<field name="notes"/>    
+                        </page>
+                    </notebook>
+    			</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="fi_shopplace_list_view" model="ir.ui.view">
+			<field name="name">fi.shopplace.list.view</field>
+			<field name="model">fi.shopplace</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Fiestas" colors="green:state=='activo';grey:state=='cerrado'">
+					<field name="name" />
+					<field name="partner_id" />
+					<field name="campaign_id" />
+					<field name="artisan" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+		         
+	</data>
+</openerp>

@@ -3,10 +3,7 @@
 	<data>
 		
 		<!-- menu actions -->
-		<act_window id="action_all_contacts_list" name="Contactos" res_model="res.partner" view_mode="tree,form" />
 		<act_window id="action_clients_list" name="Clientes" res_model="res.partner" domain="[('customer','=','true')]" view_mode="tree,form" />
-		<act_window id="action_artisans_list" name="Artesanos" res_model="res.partner" domain="[('artisan','=','true')]" view_mode="tree,form" />
-		<act_window id="action_suppliers_list" name="Proveedores" res_model="res.partner" domain="[('supplier','=','true')]" view_mode="tree,form" />
 		<act_window id="action_volunteers_list" name="Voluntarios" res_model="res.partner" domain="[('volunteer','=','true')]" view_mode="tree,form" />
 		
 		<!-- Menu Global -->
@@ -32,11 +29,8 @@
 		<menuitem id="fi_management_events" name="Gestión de Global" parent="root_menu_fi_management" sequence="1"/>
 			<menuitem id="fi_mngmt_events" name="Fiestas" action="action_campaigns_list" parent="fi_management_events" sequence="1" />			
 		
-		<menuitem id="fi_management_contacts" name="Agenda de Contactos" parent="root_menu_fi_management" sequence="2"/>
-			<menuitem id="fi_mngmt_all_contacts" name="Todos los contactos" action="action_all_contacts_list" parent="fi_management_contacts" sequence="1" />
-			<menuitem id="fi_mngmt_clients" name="Clientes" action="action_clients_list" parent="fi_management_contacts" sequence="2" />			
-			<menuitem id="fi_mngmt_artisans" name="Artesanos" action="action_artisans_list" parent="fi_management_contacts" sequence="3"/>
-			<menuitem id="fi_mngmt_suppliers" name="Proveedores" action="action_suppliers_list" parent="fi_management_contacts" sequence="4"/>
+		<menuitem id="fi_management_contacts" name="Agenda" parent="root_menu_fi_management" sequence="2"/>
+			<menuitem id="fi_mngmt_clients" name="Contactos" action="action_clients_list" parent="fi_management_contacts" sequence="2" />			
 			<menuitem id="fi_mngmt_volunteers" name="Voluntarios" action="action_volunteers_list" parent="fi_management_contacts" sequence="5" />  
 		
 		<menuitem id="fi_management_places" name="Gestión de Puestos" parent="root_menu_fi_management" sequence="3"/>

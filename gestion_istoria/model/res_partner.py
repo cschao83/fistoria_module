@@ -10,7 +10,7 @@ class res_partner(models.Model):
     #nuevos atributos
     volunteer = fields.Boolean('Voluntario')
     artisan = fields.Boolean('Artesano')
-
+    shopplaces = fields.One2many('fi.shopplace','partner_id',copy=True)
     dni = fields.Char('Dni')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
