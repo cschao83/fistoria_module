@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="fi_bankplace_form_view" model="ir.ui.view">
+			<field name="name">fi.bankplace.form.view</field>
+			<field name="model">fi.bankplace</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form>
+				<header>
+                	<field name="state" widget="statusbar" nolabel="1" />    
+                </header>
+				<sheet>
+					<h1>
+                        <field name="name" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+                    </h1>
+               		<group>
+						<group>
+						</group>
+						<group>
+							<button name="action_open_bank" states="draft" string="Open Bank" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+							<button name="action_close_bank" states="open" string="Close Bank" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+						</group>
+    				</group>
+					<group>
+						<group>
+							<field name="campaign_id" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+							<field name="centralbank_id" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+							<field name="responsible_id" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+							<field name="type" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+						</group>
+						<group>
+							<field name="total_m_changed" readonly="True"/>
+							<field name="total_e_returned" readonly="True"/>
+						</group>
+    				</group>
+					<notebook colspan="4">
+                  		<page string="Bank turns">
+                        	<field name="bank_turns" readonly="True">
+                        		<tree>
+                        		 <field name="name"/>
+                        		 <field name="time_init" />
+                        		 <field name="time_finish" />
+                        		 <field name="turn_total_m_changed"/>
+                        		 <field name="turn_total_e_returned"/>
+                        		</tree>
+                        	</field>    
+                        </page>
+					    <page string="Operations">
+                        	<field name="operations" readonly="True">
+                        		<tree>
+                        		 <field name="type"/>
+                        		 <field name="origin_bank_id"/>
+                        		 <field name="turn_id"/>
+                        		 <field name="maravedies_amount"/>
+                        		 <field name="euros_amount"/>
+                        		</tree>
+                        	</field>    
+                        </page>
+                    	<page string="Notes">
+                        	<field name="notes"/>    
+                        </page>
+                    </notebook>
+    			</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="fi_bankplaces_list_view" model="ir.ui.view">
+			<field name="name">fi.bankplaces.list.view</field>
+			<field name="model">fi.bankplace</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Fiestas">
+					<field name="name" />
+					<field name="campaign_id" />
+					<field name="type" />
+					<field name="total_m_changed" sum="Total changed"/>
+					<field name="total_e_returned" sum="Total returned"/>
+				</tree>
+			</field>
+		</record>
+		         
+	</data>
+</openerp>

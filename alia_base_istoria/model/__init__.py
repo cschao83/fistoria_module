@@ -36,10 +36,15 @@
 from . import fi_artisan_type
 from . import fi_entry_type
 from . import fi_money_type
+from . import fi_money_line
 from . import fi_payment_type
+from . import fi_place
 from . import fi_shopplace
-from . import fi_cashplace
 from . import fi_campaign
+from . import fi_bank
+from . import fi_bankplace
+from . import fi_bankoperation
+from . import fi_bankturn
 from . import res_partner
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record id="new_central_bank_reserve_operation_popup_form" model="ir.ui.view">
+			<field name="name">new.central.bank.operation.popup.form</field>
+			<field name="model">fi.bankoperation</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form>
+				<sheet>
+					<group>
+						<group>
+							<field name="type" readonly="True"/>
+							<field name="centralbank_id" readonly="True"/>
+							<field name="maravedies_amount" />
+						</group>
+						<group>
+
+						</group>
+    				</group>
+    			</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="new_central_bank_send_m_operation_popup_form" model="ir.ui.view">
+			<field name="name">new.central.bank.send.m.operation.popup.form</field>
+			<field name="model">fi.bankoperation</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form>
+				<sheet>
+					<group>
+						<group>
+							<field name="type" readonly="True"/>
+							<field name="centralbank_id" readonly="True"/>
+							<field name="origin_bank_id" />
+							<field name="turn_id"/>
+							<field name="maravedies_amount" />
+						</group>
+						<group>
+
+						</group>
+    				</group>
+    			</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="new_central_bank_receive_m_operation_popup_form" model="ir.ui.view">
+			<field name="name">new.central.bank.receive.m.operation.popup.form</field>
+			<field name="model">fi.bankoperation</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form>
+				<sheet>
+					<group>
+						<group>
+							<field name="type" readonly="True"/>
+							<field name="centralbank_id" readonly="True"/>
+							<field name="origin_bank_id" />
+							<field name="turn_id"/>
+							<field name="maravedies_amount" />
+						</group>
+						<group>
+
+						</group>
+    				</group>
+    			</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="new_central_bank_receive_e_operation_popup_form" model="ir.ui.view">
+			<field name="name">new.central.bank.receive.e.operation.popup.form</field>
+			<field name="model">fi.bankoperation</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form>
+				<sheet>
+					<group>
+						<group>
+							<field name="type" readonly="True"/>
+							<field name="centralbank_id" readonly="True"/>
+							<field name="origin_bank_id" />
+							<field name="turn_id"/>
+							<field name="euros_amount" />
+						</group>
+						<group>
+
+						</group>
+    				</group>
+    			</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="new_central_bank_send_e_operation_popup_form" model="ir.ui.view">
+			<field name="name">new.central.bank.send.e.operation.popup.form</field>
+			<field name="model">fi.bankoperation</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form>
+				<sheet>
+					<group>
+						<group>
+							<field name="type" readonly="True"/>
+							<field name="centralbank_id" readonly="True"/>
+							<field name="origin_bank_id" />
+							<field name="turn_id"/>
+							<field name="euros_amount" />
+						</group>
+						<group>
+
+						</group>
+    				</group>
+    			</sheet>
+				</form>
+			</field>
+		</record>
+
+		         
+	</data>
+</openerp>

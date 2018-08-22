@@ -1,0 +1,857 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* alia_base_istoria
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-22 01:39+0000\n"
+"PO-Revision-Date: 2018-08-22 01:39+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: alia_base_istoria
+#: view:fi.campaign:alia_base_istoria.fi_campaign_form_view
+msgid "Abrir Fiesta"
+msgstr "Abrir Festa"
+
+#. module: alia_base_istoria
+#: selection:fi.campaign,state:0
+msgid "Activa"
+msgstr "Activa"
+
+#. module: alia_base_istoria
+#: selection:fi.bankturn,state:0
+#: selection:fi.shopplace,state:0
+msgid "Active"
+msgstr "Activa"
+
+#. module: alia_base_istoria
+#: view:fi.bankturn:alia_base_istoria.fi_bankturn_form_view
+msgid "Active turn"
+msgstr "Activar quenda"
+
+#. module: alia_base_istoria
+#: model:ir.ui.menu,name:alia_base_istoria.fi_management_contacts
+msgid "Agenda"
+msgstr "Axenda"
+
+#. module: alia_base_istoria
+#: field:fi.bank,amount_euros_for_banking:0
+msgid "Amount euros in Central Bank"
+msgstr "Euros totais no Banco Central"
+
+#. module: alia_base_istoria
+#: field:fi.bank,amount_maravedies_for_shops:0
+msgid "Amount maravedies for shops"
+msgstr "Maravedis reservados para postos"
+
+#. module: alia_base_istoria
+#: field:fi.bank,amount_maravedies_for_banking:0
+msgid "Amount maravedies in Central Bank"
+msgstr "Maravedis totais no Banco Central"
+
+#. module: alia_base_istoria
+#: field:res.partner,artisan:0
+msgid "Artesano"
+msgstr "Artesán"
+
+#. module: alia_base_istoria
+#: selection:fi.shopplace,type:0
+msgid "Artisan"
+msgstr "Artesán"
+
+#. module: alia_base_istoria
+#: model:ir.ui.menu,name:alia_base_istoria.fi_management_bank
+msgid "Banco"
+msgstr "Banco"
+
+#. module: alia_base_istoria
+#: model:ir.actions.act_window,name:alia_base_istoria.action_banks_list
+msgid "Banco anual"
+msgstr "Banco anual"
+
+#. module: alia_base_istoria
+#: model:ir.ui.menu,name:alia_base_istoria.fi_mngmt_banks
+msgid "Banco central"
+msgstr "Banco central"
+
+#. module: alia_base_istoria
+#: field:fi.campaign,centralbank_id:0
+#: model:ir.model,name:alia_base_istoria.model_fi_bank
+msgid "Bank"
+msgstr "Banco"
+
+#. module: alia_base_istoria
+#: model:ir.model,name:alia_base_istoria.model_fi_bankoperation
+msgid "Bank Operation"
+msgstr "Operación bancaria"
+
+#. module: alia_base_istoria
+#: model:ir.model,name:alia_base_istoria.model_fi_bankoperator
+msgid "Bank Operator"
+msgstr "Banqueiro/a"
+
+#. module: alia_base_istoria
+#: model:ir.model,name:alia_base_istoria.model_fi_bankturn
+msgid "Bank Turn"
+msgstr "Quenda do Banco"
+
+#. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "Bank operations"
+msgstr "Operación do Banco"
+
+#. module: alia_base_istoria
+#: field:fi.bankoperation,turn_id:0
+msgid "Bank operator"
+msgstr "Banqueiro/a"
+
+#. module: alia_base_istoria
+#: view:fi.bankturn:alia_base_istoria.fi_bankturn_form_view
+#: field:fi.bankturn,bankoperators:0
+msgid "Bank operators"
+msgstr "Banqueiros/as"
+
+#. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "Bank places"
+msgstr "Localizacións de bancos"
+
+#. module: alia_base_istoria
+#: view:fi.bankplace:alia_base_istoria.fi_bankplace_form_view
+#: field:fi.bankplace,bank_turns:0
+msgid "Bank turns"
+msgstr "Quendas dos bancos"
+
+#. module: alia_base_istoria
+#: field:fi.bankturn,bankoperations:0
+msgid "Bankoperations"
+msgstr "Bankoperations"
+
+#. module: alia_base_istoria
+#: field:fi.bankturn,bankplace_id:0
+msgid "Bankplace id"
+msgstr "Bankplace id"
+
+#. module: alia_base_istoria
+#: model:ir.model,name:alia_base_istoria.model_fi_bankplace
+msgid "Banks"
+msgstr "Bancos"
+
+#. module: alia_base_istoria
+#: model:ir.model,name:alia_base_istoria.model_fi_place
+msgid "Base placement"
+msgstr "Base placement"
+
+#. module: alia_base_istoria
+#: selection:fi.campaign,state:0
+msgid "Borrador"
+msgstr "Borrador"
+
+#. module: alia_base_istoria
+#: model:ir.model,name:alia_base_istoria.model_fi_cashplace
+#: model:ir.ui.menu,name:alia_base_istoria.fi_mngmt_bankplaces
+msgid "Cajas"
+msgstr "Caixas"
+
+#. module: alia_base_istoria
+#: field:fi.bank,campaign_id:0
+msgid "Campaign"
+msgstr "Festa"
+
+#. module: alia_base_istoria
+#: view:fi.campaign:alia_base_istoria.fi_campaign_form_view
+msgid "Campaign configuration"
+msgstr "Configuración da festa"
+
+#. module: alia_base_istoria
+#: field:fi.bank,cashplaces:0
+msgid "Cashplaces"
+msgstr "Sucursais"
+
+#. module: alia_base_istoria
+#: selection:fi.bankplace,type:0
+msgid "Central"
+msgstr "Central"
+
+#. module: alia_base_istoria
+#: field:fi.bankoperation,centralbank_id:0
+msgid "Central Bank"
+msgstr "Banco central"
+
+#. module: alia_base_istoria
+#: field:fi.bankplace,centralbank_id:0
+#: field:fi.money.line,centralbank_id:0
+msgid "Centralbank id"
+msgstr "Centralbank id"
+
+#. module: alia_base_istoria
+#: selection:fi.campaign,state:0
+msgid "Cerrada"
+msgstr "Pechada"
+
+#. module: alia_base_istoria
+#: view:fi.campaign:alia_base_istoria.fi_campaign_form_view
+msgid "Cerrar Fiesta"
+msgstr "Pechar Festa"
+
+#. module: alia_base_istoria
+#: selection:fi.bankplace,type:0
+msgid "Change"
+msgstr "Troco"
+
+#. module: alia_base_istoria
+#: view:fi.bankturn:alia_base_istoria.fi_bankturn_form_view
+msgid "Change 10"
+msgstr "Troco 10"
+
+#. module: alia_base_istoria
+#: view:fi.bankturn:alia_base_istoria.fi_bankturn_form_view
+msgid "Change 20"
+msgstr "Troco 20"
+
+#. module: alia_base_istoria
+#: view:fi.bankturn:alia_base_istoria.fi_bankturn_form_view
+msgid "Change 50"
+msgstr "Troco 50"
+
+#. module: alia_base_istoria
+#: field:fi.bankplace,change_ratio:0
+#: field:fi.campaign,change_ratio:0
+msgid "Change ratio (%)"
+msgstr "Ratio de troco (%)"
+
+#. module: alia_base_istoria
+#: selection:fi.bankoperation,type:0
+msgid "Change to client"
+msgstr "Troco a cliente"
+
+#. module: alia_base_istoria
+#: selection:fi.bankplace,type:0
+msgid "Change-Return"
+msgstr "Troco-Retroco"
+
+#. module: alia_base_istoria
+#: model:ir.actions.act_window,name:alia_base_istoria.action_clients_list
+msgid "Clientes"
+msgstr "Clientes"
+
+#. module: alia_base_istoria
+#: view:fi.bankplace:alia_base_istoria.fi_bankplace_form_view
+msgid "Close Bank"
+msgstr "Pechar Banco"
+
+#. module: alia_base_istoria
+#: view:fi.bankturn:alia_base_istoria.fi_bankturn_form_view
+msgid "Close turn"
+msgstr "Pechar quenda"
+
+#. module: alia_base_istoria
+#: selection:fi.bankplace,state:0
+#: selection:fi.bankturn,state:0
+#: selection:fi.shopplace,state:0
+msgid "Closed"
+msgstr "Pechado"
+
+#. module: alia_base_istoria
+#: model:ir.ui.menu,name:alia_base_istoria.fi_mngmt_clients
+msgid "Contactos"
+msgstr "Contactos"
+
+#. module: alia_base_istoria
+#: selection:fi.shopplace,state:0
+msgid "Contract"
+msgstr "Contract"
+
+#. module: alia_base_istoria
+#: field:fi.artisan.type,create_uid:0
+#: field:fi.bank,create_uid:0
+#: field:fi.bankoperation,create_uid:0
+#: field:fi.bankplace,create_uid:0
+#: field:fi.bankturn,create_uid:0
+#: field:fi.campaign,create_uid:0
+#: field:fi.entry.type,create_uid:0
+#: field:fi.money.line,create_uid:0
+#: field:fi.money.type,create_uid:0
+#: field:fi.payment.type,create_uid:0
+#: field:fi.place,create_uid:0
+#: field:fi.shopplace,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: alia_base_istoria
+#: field:fi.artisan.type,create_date:0
+#: field:fi.bank,create_date:0
+#: field:fi.bankoperation,create_date:0
+#: field:fi.bankplace,create_date:0
+#: field:fi.bankturn,create_date:0
+#: field:fi.campaign,create_date:0
+#: field:fi.entry.type,create_date:0
+#: field:fi.money.line,create_date:0
+#: field:fi.money.type,create_date:0
+#: field:fi.payment.type,create_date:0
+#: field:fi.place,create_date:0
+#: field:fi.shopplace,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: alia_base_istoria
+#: field:fi.campaign,event_date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: alia_base_istoria
+#: view:fi.shopplace:alia_base_istoria.fi_shopplace_form_view
+msgid "Datos del puesto"
+msgstr "Datos do posto"
+
+#. module: alia_base_istoria
+#: field:fi.artisan.type,display_name:0
+#: field:fi.bank,display_name:0
+#: field:fi.bankoperation,display_name:0
+#: field:fi.bankplace,display_name:0
+#: field:fi.bankturn,display_name:0
+#: field:fi.campaign,display_name:0
+#: field:fi.entry.type,display_name:0
+#: field:fi.money.line,display_name:0
+#: field:fi.money.type,display_name:0
+#: field:fi.payment.type,display_name:0
+#: field:fi.place,display_name:0
+#: field:fi.shopplace,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: alia_base_istoria
+#: field:res.partner,dni:0
+msgid "Dni"
+msgstr "Dni"
+
+#. module: alia_base_istoria
+#: selection:fi.bankplace,state:0
+#: selection:fi.bankturn,state:0
+#: selection:fi.shopplace,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: alia_base_istoria
+#: selection:fi.shopplace,type:0
+msgid "Draw"
+msgstr "Draw"
+
+#. module: alia_base_istoria
+#: selection:fi.bankoperation,type:0
+msgid "Entry"
+msgstr "Ingreso"
+
+#. module: alia_base_istoria
+#: view:fi.shopplace:alia_base_istoria.fi_shopplace_form_view
+msgid "Etiqueta GS"
+msgstr "Etiqueta GS"
+
+#. module: alia_base_istoria
+#: field:fi.bankoperation,euros_amount:0
+msgid "Euros amount"
+msgstr "Euros totais"
+
+#. module: alia_base_istoria
+#: field:fi.bankturn,euros_remains:0
+msgid "Euros remains"
+msgstr "Euros restantes"
+
+#. module: alia_base_istoria
+#: field:fi.bankplace,campaign_id:0
+#: field:fi.bankturn,campaign_id:0
+#: field:fi.place,campaign_id:0
+#: field:fi.shopplace,campaign_id:0
+#: model:ir.model,name:alia_base_istoria.model_fi_campaign
+msgid "Fiesta"
+msgstr "Festa"
+
+#. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_list_view
+#: view:fi.bankplace:alia_base_istoria.fi_bankplaces_list_view
+#: view:fi.campaign:alia_base_istoria.fi_campaign_view
+#: view:fi.shopplace:alia_base_istoria.fi_shopplace_list_view
+#: model:ir.actions.act_window,name:alia_base_istoria.action_campaigns_list
+#: model:ir.ui.menu,name:alia_base_istoria.fi_mngmt_events
+msgid "Fiestas"
+msgstr "Festas"
+
+#. module: alia_base_istoria
+#: selection:fi.shopplace,type:0
+msgid "Fixed"
+msgstr "Fixo"
+
+#. module: alia_base_istoria
+#: model:ir.ui.menu,name:alia_base_istoria.fi_management_events
+msgid "Gestión de Global"
+msgstr "Xestión de Global"
+
+#. module: alia_base_istoria
+#: model:ir.ui.menu,name:alia_base_istoria.fi_management_places
+msgid "Gestión de Puestos"
+msgstr "Xestión de Postos"
+
+#. module: alia_base_istoria
+#: model:ir.ui.menu,name:alia_base_istoria.root_menu_fi_management
+msgid "Herramienta de Gestión"
+msgstr "Ferramenta de Xestión"
+
+#. module: alia_base_istoria
+#: view:fi.bankturn:alia_base_istoria.fi_bankturn_form_view
+msgid "Historic operations"
+msgstr "Histórico de operacións"
+
+#. module: alia_base_istoria
+#: field:fi.artisan.type,id:0
+#: field:fi.bank,id:0
+#: field:fi.bankoperation,id:0
+#: field:fi.bankplace,id:0
+#: field:fi.bankturn,id:0
+#: field:fi.campaign,id:0
+#: field:fi.entry.type,id:0
+#: field:fi.money.line,id:0
+#: field:fi.money.type,id:0
+#: field:fi.payment.type,id:0
+#: field:fi.place,id:0
+#: field:fi.shopplace,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: alia_base_istoria
+#: field:fi.campaign,notes:0
+msgid "Internal notes"
+msgstr "Notas internas"
+
+#. module: alia_base_istoria
+#: field:fi.artisan.type,__last_update:0
+#: field:fi.bank,__last_update:0
+#: field:fi.bankoperation,__last_update:0
+#: field:fi.bankplace,__last_update:0
+#: field:fi.bankturn,__last_update:0
+#: field:fi.campaign,__last_update:0
+#: field:fi.entry.type,__last_update:0
+#: field:fi.money.line,__last_update:0
+#: field:fi.money.type,__last_update:0
+#: field:fi.payment.type,__last_update:0
+#: field:fi.place,__last_update:0
+#: field:fi.shopplace,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: alia_base_istoria
+#: field:fi.artisan.type,write_uid:0
+#: field:fi.bank,write_uid:0
+#: field:fi.bankoperation,write_uid:0
+#: field:fi.bankplace,write_uid:0
+#: field:fi.bankturn,write_uid:0
+#: field:fi.campaign,write_uid:0
+#: field:fi.entry.type,write_uid:0
+#: field:fi.money.line,write_uid:0
+#: field:fi.money.type,write_uid:0
+#: field:fi.payment.type,write_uid:0
+#: field:fi.place,write_uid:0
+#: field:fi.shopplace,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: alia_base_istoria
+#: field:fi.artisan.type,write_date:0
+#: field:fi.bank,write_date:0
+#: field:fi.bankoperation,write_date:0
+#: field:fi.bankplace,write_date:0
+#: field:fi.bankturn,write_date:0
+#: field:fi.campaign,write_date:0
+#: field:fi.entry.type,write_date:0
+#: field:fi.money.line,write_date:0
+#: field:fi.money.type,write_date:0
+#: field:fi.payment.type,write_date:0
+#: field:fi.place,write_date:0
+#: field:fi.shopplace,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: alia_base_istoria
+#: field:fi.bankoperation,maravedies_amount:0
+msgid "Maravedies amount"
+msgstr "Maravedis totais"
+
+#. module: alia_base_istoria
+#: field:fi.bankturn,maravedies_remains:0
+msgid "Maravedies remains"
+msgstr "Maravedis restantes"
+
+#. module: alia_base_istoria
+#: model:ir.model,name:alia_base_istoria.model_fi_money_line
+msgid "Money line"
+msgstr "Liña de cartos"
+
+#. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "Money supplied"
+msgstr "Cartos proporcionados"
+
+#. module: alia_base_istoria
+#: field:fi.money.line,money_type:0
+msgid "Money type"
+msgstr "Tipo de cartos"
+
+#. module: alia_base_istoria
+#: field:fi.artisan.type,name:0
+#: field:fi.bank,name:0
+#: field:fi.campaign,name:0
+#: field:fi.entry.type,name:0
+#: field:fi.money.type,name:0
+#: field:fi.payment.type,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: alia_base_istoria
+#: field:fi.bankplace,name:0
+#: field:fi.place,name:0
+#: field:fi.shopplace,name:0
+msgid "Nombre"
+msgstr "Nome"
+
+#. module: alia_base_istoria
+#: field:fi.bankplace,notes:0
+#: field:fi.place,notes:0
+#: field:fi.shopplace,notes:0
+msgid "Notas Internas"
+msgstr "Notas Internas"
+
+#. module: alia_base_istoria
+#: view:fi.bankplace:alia_base_istoria.fi_bankplace_form_view
+#: view:fi.bankturn:alia_base_istoria.fi_bankturn_form_view
+#: field:fi.bankturn,notes:0
+#: view:fi.campaign:alia_base_istoria.fi_campaign_form_view
+#: view:fi.shopplace:alia_base_istoria.fi_shopplace_form_view
+msgid "Notes"
+msgstr "Notas"
+
+#. module: alia_base_istoria
+#: selection:fi.bankplace,state:0
+msgid "Open"
+msgstr "Aberto"
+
+#. module: alia_base_istoria
+#: view:fi.bankplace:alia_base_istoria.fi_bankplace_form_view
+msgid "Open Bank"
+msgstr "Abrir Banco"
+
+#. module: alia_base_istoria
+#: field:fi.bank,operations:0
+#: view:fi.bankplace:alia_base_istoria.fi_bankplace_form_view
+#: field:fi.bankplace,operations:0
+#: view:fi.bankturn:alia_base_istoria.fi_bankturn_form_view
+msgid "Operations"
+msgstr "Operacións"
+
+#. module: alia_base_istoria
+#: field:fi.bankoperation,origin_bank_id:0
+msgid "Origin Bank"
+msgstr "Banco orixe"
+
+#. module: alia_base_istoria
+#: field:fi.shopplace,partner_id:0
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: alia_base_istoria
+#: model:ir.model,name:alia_base_istoria.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: alia_base_istoria
+#: selection:fi.bankoperation,type:0
+msgid "Payment"
+msgstr "Pagamento"
+
+#. module: alia_base_istoria
+#: field:fi.bankplace,place_id:0
+#: field:fi.shopplace,place_id:0
+msgid "Place"
+msgstr "Lugar"
+
+#. module: alia_base_istoria
+#: model:ir.model,name:alia_base_istoria.model_fi_shopplace
+#: view:res.partner:alia_base_istoria.view_partner_form_inherited
+msgid "Puestos"
+msgstr "Postos"
+
+#. module: alia_base_istoria
+#: model:ir.actions.act_window,name:alia_base_istoria.action_artisans_shopplaces_list
+#: model:ir.ui.menu,name:alia_base_istoria.fi_mngmt_artisans_shopplaces
+msgid "Puestos Artesanos"
+msgstr "Postos Artesáns"
+
+#. module: alia_base_istoria
+#: model:ir.actions.act_window,name:alia_base_istoria.action_shopplaces_list
+#: model:ir.ui.menu,name:alia_base_istoria.fi_mngmt_shopplaces
+msgid "Puestos Ordinarios"
+msgstr "Postos Ordinarios"
+
+#. module: alia_base_istoria
+#: field:fi.money.line,qty:0
+msgid "Quantity"
+msgstr "Cantidade"
+
+#. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "Receive M from Turn"
+msgstr "Recibir M dunha quenda"
+
+#. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "Receive € from Turn"
+msgstr "Recibir € dunha quenda"
+
+#. module: alia_base_istoria
+#: selection:fi.bankoperation,type:0
+msgid "Received in CBank"
+msgstr "Recibido no BCentral"
+
+#. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "Reserve M for shops"
+msgstr "Reservar M para postos"
+
+#. module: alia_base_istoria
+#: selection:fi.bankoperation,type:0
+msgid "Reserve for Shops"
+msgstr "Reservado para postos"
+
+#. module: alia_base_istoria
+#: field:fi.bankplace,responsible_id:0
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: alia_base_istoria
+#: selection:fi.bankplace,type:0
+msgid "Return"
+msgstr "Retroco"
+
+#. module: alia_base_istoria
+#: selection:fi.bankoperation,type:0
+msgid "Return to client"
+msgstr "Retroco a cliente"
+
+#. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "Send M to Turn"
+msgstr "Enviar M a unha quenda"
+
+#. module: alia_base_istoria
+#: selection:fi.bankoperation,type:0
+msgid "Send from CBank"
+msgstr "Enviado dende BCentral"
+
+#. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "Send € to Turn"
+msgstr "Enviar € a unha quenda"
+
+#. module: alia_base_istoria
+#: field:fi.campaign,shopplaces:0
+#: field:res.partner,shopplaces:0
+msgid "Shopplaces"
+msgstr "Postos"
+
+#. module: alia_base_istoria
+#: view:fi.campaign:alia_base_istoria.fi_campaign_form_view
+msgid "Shops resume"
+msgstr "Resumen de postos"
+
+#. module: alia_base_istoria
+#: field:fi.bankplace,state:0
+#: field:fi.bankturn,state:0
+#: field:fi.campaign,state:0
+#: field:fi.shopplace,state:0
+msgid "State"
+msgstr "Estado"
+
+#. module: alia_base_istoria
+#: model:ir.actions.act_window,name:alia_base_istoria.action_bankplaces_list
+msgid "Sucursales"
+msgstr "Sucursais"
+
+#. module: alia_base_istoria
+#: model:ir.ui.menu,name:alia_base_istoria.fi_config
+msgid "Tablas Maestras"
+msgstr "Táboas Mestras"
+
+#. module: alia_base_istoria
+#: field:fi.bankturn,time_finish:0
+msgid "Time finish"
+msgstr "Hora de fin"
+
+#. module: alia_base_istoria
+#: field:fi.bankturn,time_init:0
+msgid "Time init"
+msgstr "Hora de inicio"
+
+#. module: alia_base_istoria
+#: model:ir.actions.act_window,name:alia_base_istoria.action_artisan_types_list
+#: model:ir.ui.menu,name:alia_base_istoria.fi_artisan_types
+msgid "Tipos de Artesano"
+msgstr "Tipos de Artesáns"
+
+#. module: alia_base_istoria
+#: model:ir.actions.act_window,name:alia_base_istoria.action_entry_types_list
+#: model:ir.ui.menu,name:alia_base_istoria.fi_entry_types
+msgid "Tipos de Ingreso"
+msgstr "Tipos de Ingreso"
+
+#. module: alia_base_istoria
+#: model:ir.actions.act_window,name:alia_base_istoria.action_money_types_list
+#: model:ir.ui.menu,name:alia_base_istoria.fi_money_types
+msgid "Tipos de Moneda"
+msgstr "Tipos de Moeda"
+
+#. module: alia_base_istoria
+#: model:ir.actions.act_window,name:alia_base_istoria.action_payment_types_list
+#: model:ir.ui.menu,name:alia_base_istoria.fi_payment_types
+msgid "Tipos de Pago"
+msgstr "Tipos de Pagamentos"
+
+#. module: alia_base_istoria
+#: model:ir.model,name:alia_base_istoria.model_fi_artisan_type
+msgid "Tipos de artesanos"
+msgstr "Tipos de artesáns"
+
+#. module: alia_base_istoria
+#: model:ir.model,name:alia_base_istoria.model_fi_money_type
+msgid "Tipos de billetes"
+msgstr "Tipos de billetes"
+
+#. module: alia_base_istoria
+#: model:ir.model,name:alia_base_istoria.model_fi_entry_type
+msgid "Tipos de ingresos"
+msgstr "Tipos de ingresos"
+
+#. module: alia_base_istoria
+#: model:ir.model,name:alia_base_istoria.model_fi_payment_type
+msgid "Tipos de pagos"
+msgstr "Tipos de pagamentos"
+
+#. module: alia_base_istoria
+#: field:fi.bankplace,total_e_returned:0
+#: field:fi.bankturn,turn_total_e_returned:0
+msgid "Total Euros returned"
+msgstr "Euros totais devoltos"
+
+#. module: alia_base_istoria
+#: field:fi.bankplace,total_m_changed:0
+#: field:fi.bankturn,turn_total_m_changed:0
+msgid "Total Maravedies changed"
+msgstr "Maravedies totais trocados"
+
+#. module: alia_base_istoria
+#: field:fi.campaign,total_artisans:0
+msgid "Total artisans"
+msgstr "Artesáns totais"
+
+#. module: alia_base_istoria
+#: view:fi.bankplace:alia_base_istoria.fi_bankplaces_list_view
+#: view:fi.bankturn:alia_base_istoria.fi_bankturns_list_view
+msgid "Total changed"
+msgstr "Total trocado"
+
+#. module: alia_base_istoria
+#: field:fi.campaign,amount_maravedies_changed:0
+msgid "Total changed (Maravedies)"
+msgstr "Total trocado (Maravedis)"
+
+#. module: alia_base_istoria
+#: view:fi.bankturn:alia_base_istoria.fi_bankturns_list_view
+msgid "Total euros"
+msgstr "Total euros"
+
+#. module: alia_base_istoria
+#: view:fi.bankturn:alia_base_istoria.fi_bankturns_list_view
+msgid "Total maravedies"
+msgstr "Total maravedis"
+
+#. module: alia_base_istoria
+#: field:fi.bank,total_maravedies_changed:0
+msgid "Total maravedies changed"
+msgstr "Total de maravedis trocados"
+
+#. module: alia_base_istoria
+#: field:fi.bank,amount_maravedies_provided:0
+msgid "Total maravedies provided"
+msgstr "Total de maravedis provistos"
+
+#. module: alia_base_istoria
+#: field:fi.bank,total_new_money:0
+msgid "Total new money"
+msgstr "Nova moeda en total"
+
+#. module: alia_base_istoria
+#: field:fi.campaign,total_new_money_amount:0
+msgid "Total new money supplied"
+msgstr "Nova moeda proporcionada"
+
+#. module: alia_base_istoria
+#: field:fi.campaign,amount_payments:0
+msgid "Total paid (€)"
+msgstr "Pagamento total (€)"
+
+#. module: alia_base_istoria
+#: field:fi.campaign,amount_founding:0
+#: field:fi.campaign,amount_profits:0
+msgid "Total profits (€)"
+msgstr "Beneficios totais (€)"
+
+#. module: alia_base_istoria
+#: view:fi.bankplace:alia_base_istoria.fi_bankplaces_list_view
+#: view:fi.bankturn:alia_base_istoria.fi_bankturns_list_view
+msgid "Total returned"
+msgstr "Total de retroco"
+
+#. module: alia_base_istoria
+#: field:fi.campaign,total_shops:0
+msgid "Total shops"
+msgstr "Postos totais"
+
+#. module: alia_base_istoria
+#: field:fi.bankturn,name:0
+msgid "Turn name"
+msgstr "Nome da quenda"
+
+#. module: alia_base_istoria
+#: view:fi.bankturn:alia_base_istoria.fi_bankturns_list_view
+#: model:ir.actions.act_window,name:alia_base_istoria.action_bankturns_list
+#: model:ir.ui.menu,name:alia_base_istoria.fi_mngmt_bankturns
+msgid "Turnos"
+msgstr "Quendas"
+
+#. module: alia_base_istoria
+#: field:fi.bankoperation,type:0
+#: field:fi.bankplace,type:0
+#: field:fi.shopplace,type:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: alia_base_istoria
+#: field:fi.money.type,value:0
+msgid "Value"
+msgstr "Valor"
+
+#. module: alia_base_istoria
+#: field:res.partner,volunteer:0
+msgid "Voluntario"
+msgstr "Voluntario"
+
+#. module: alia_base_istoria
+#: model:ir.actions.act_window,name:alia_base_istoria.action_volunteers_list
+#: model:ir.ui.menu,name:alia_base_istoria.fi_mngmt_volunteers
+msgid "Voluntarios"
+msgstr "Voluntarios"
+

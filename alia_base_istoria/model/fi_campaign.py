@@ -43,20 +43,22 @@ _logger = logging.getLogger(__name__)
 class fi_campaign(models.Model):
 
     _name = 'fi.campaign'
-    _description = 'Fiesta'
+    _description = 'Campaign'
 
 
-    name = fields.Char("Nombre")
-    event_date = fields.Date("Fecha")
+    name = fields.Char("Name",required=True)
+    event_date = fields.Date("Date",required=True)
+    centralbank_id = fields.Many2one('fi.bank',string='Bank')
     shopplaces = fields.One2many('fi.shopplace','campaign_id',copy=True)
-    cashplaces = fields.One2many('fi.cashplace','campaign_id',copy=True)
-    total_shops = fields.Integer("Puestos")
-    total_artisans = fields.Integer("Artesanos")
-    amount_money = fields.Float("Total cambiado en bancos (€)")
-    amount_founding = fields.Float("Ingresos totales (€)")
-    amount_payments = fields.Float("Pagos totales (€)")
-    amount_profits = fields.Float("Resultado (€)")
-    notes = fields.Text("Notas Internas")
+    total_shops = fields.Integer("Total shops")
+    total_artisans = fields.Integer("Total artisans")
+    amount_maravedies_changed = fields.Float("Total changed (Maravedies)",related='centralbank_id.total_maravedies_changed')
+    amount_founding = fields.Float("Total profits (€)")
+    amount_payments = fields.Float("Total paid (€)")
+    amount_profits = fields.Float("Total profits (€)")
+    change_ratio = fields.Float("Change ratio (%)",required=True)
+    total_new_money_amount = fields.Float(related='centralbank_id.amount_maravedies_provided',string='Total new money supplied')
+    notes = fields.Text("Internal notes")
     state = fields.Selection([('borrador','Borrador'),('activa','Activa'),('cerrada','Cerrada')],default='borrador')
 
 

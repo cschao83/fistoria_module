@@ -10,11 +10,13 @@
 		<act_window id="action_campaigns_list" name="Fiestas" res_model="fi.campaign" view_mode="tree,form" />
 		
 		<!-- Menu ShopPlaces -->
-		<act_window id="action_shopplaces_list" name="Puestos Ordinarios" res_model="fi.shopplace" domain="[('artisan','=','false')]" view_mode="tree,form" />
-		<act_window id="action_artisans_shopplaces_list" name="Puestos Artesanos" res_model="fi.shopplace" domain="[('artisan','=','true')]" view_mode="tree,form" />
+		<act_window id="action_shopplaces_list" name="Puestos Ordinarios" res_model="fi.shopplace" view_mode="tree,form" />
+		<act_window id="action_artisans_shopplaces_list" name="Puestos Artesanos" res_model="fi.shopplace" view_mode="tree,form" />
 		
 		<!-- Menu Bancos -->
-		<act_window id="action_cashplaces_list" name="Cajas" res_model="fi.cashplace" view_mode="tree,form" />
+		<act_window id="action_banks_list" name="Banco anual" res_model="fi.bank" view_mode="tree,form" />
+		<act_window id="action_bankplaces_list" name="Sucursales" res_model="fi.bankplace" view_mode="tree,form" />
+		<act_window id="action_bankturns_list" name="Turnos" res_model="fi.bankturn" view_mode="tree,form" />
 		
 		<!-- Menu Config -->
 		<act_window id="action_artisan_types_list" name="Tipos de Artesano" res_model="fi.artisan.type" view_mode="tree,form" />
@@ -38,7 +40,9 @@
 			<menuitem id="fi_mngmt_artisans_shopplaces" name="Puestos Artesanos" action="action_artisans_shopplaces_list" parent="fi_management_places" sequence="2"/>
 
 		<menuitem id="fi_management_bank" name="Banco" parent="root_menu_fi_management" sequence="4"/>
-			<menuitem id="fi_mngmt_cashplaces" name="Cajas" action="action_cashplaces_list" parent="fi_management_bank" sequence="1"/>	
+			<menuitem id="fi_mngmt_banks" name="Banco central" action="action_banks_list" parent="fi_management_bank" sequence="0"/>
+			<menuitem id="fi_mngmt_bankplaces" name="Cajas" action="action_bankplaces_list" parent="fi_management_bank" sequence="1"/>
+			<menuitem id="fi_mngmt_bankturns" name="Turnos" action="action_bankturns_list" parent="fi_management_bank" sequence="2"/>	
 	
 		<menuitem id="fi_config" name="Tablas Maestras" parent="root_menu_fi_management" sequence="40"/>
 			<menuitem id="fi_artisan_types" name="Tipos de Artesano" action="action_artisan_types_list" parent="fi_config" sequence="1" />			

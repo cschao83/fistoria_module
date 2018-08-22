@@ -22,22 +22,6 @@
                     <field name="customer" modifiers="{}"/>
 					<field name="supplier" modifiers="{}"/>
                 </xpath>
-                <!-- 
-                <xpath expr="//page[@name='sales_purchases']" position="replace">
-                     <page name='partner_type' string="Tipo de contacto">
-						<group>
-							<group>
-								<field name="customer" modifiers="{}"/>
-								<field name="supplier" modifiers="{}"/>
-							</group>
-							<group>
-								<field name="artisan" modifiers="{}"/>
-								<field name="volunteer" modifiers="{}"/>
-							</group>
-						</group>
-                     </page>
-                </xpath>
-                 -->
                 <xpath expr="//page[@name='sales_purchases']" position="replace">
                      <page name='shopplaces_list' string="Puestos">
                      		<field name="shopplaces"  widget="one2many" />

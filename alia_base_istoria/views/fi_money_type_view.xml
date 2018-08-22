@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="fi_money_type_form_view" model="ir.ui.view">
+			<field name="name">fi.money.type.form.view</field>
+			<field name="model">fi.money.type</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form>
+				<sheet>
+					<group>
+						<group>
+							<field name="name"/>
+							<field name="value"/>
+						</group>
+    				</group>
+    			</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="fi_money_type_list_view" model="ir.ui.view">
+			<field name="name">fi.money.type.list.view</field>
+			<field name="model">fi.money.type</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name" />
+					<field name="value" />
+				</tree>
+			</field>
+		</record>
+		         
+	</data>
+</openerp>

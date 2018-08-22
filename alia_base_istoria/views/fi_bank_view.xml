@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="fi_bank_form_view" model="ir.ui.view">
+			<field name="name">fi.bank.form.view</field>
+			<field name="model">fi.bank</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form>
+				<sheet>
+					<h1>
+                        <field name="name" />
+                    </h1>
+					<group>
+						<group>
+							<field name="campaign_id"/>
+							<field name="amount_maravedies_provided" readonly="True"/>
+							<field name="amount_maravedies_for_shops" readonly="True"/>
+							<field name="total_maravedies_changed" readonly="True"/>
+						</group>
+						<group>
+							<button name="action_send_maravedies_to_turn" string="Send M to Turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+							<button name="action_send_euros_to_turn" string="Send € to Turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+							<button name="action_receive_maravedies_from_turn" string="Receive M from Turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+							<button name="action_receive_euros_from_turn" string="Receive € from Turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+							<button name="action_reserve_maravedies_to_shops" string="Reserve M for shops" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+						</group>
+    				</group>
+    				<group>
+    					<group>
+    						<field name="amount_maravedies_for_banking" readonly="True"/>
+    					</group>
+    					<group>
+    						<field name="amount_euros_for_banking" readonly="True"/>
+    					</group>
+    				</group>
+					<notebook colspan="4">
+                        <page string="Money supplied">
+                        	<field name="total_new_money">
+                        		<tree editable="bottom">
+                        			<field name="money_type"/>
+                        			<field name="qty"/>
+                        		</tree>
+                        	</field>
+                        </page>
+                        <page string="Bank places">
+                        	<field name="cashplaces" readonly="True">
+                        		<tree>
+                        			<field name="name"/>
+                        			<field name="total_m_changed"/>
+                        			<field name="total_e_returned"/>
+                        			<field name="state"/>
+                        		</tree>
+                        	</field>
+                        </page>
+                        <page string="Bank operations">
+                        	<field name="operations" readonly="True">
+                        		<tree>
+                        			<field name="create_date"/>
+                        			<field name="type"/>
+                        			<field name="turn_id"/>
+                        			<field name="maravedies_amount"/>
+                        			<field name="euros_amount"/>
+                        		</tree>
+                        	</field>
+                        </page>
+                    </notebook>
+    			</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="fi_bank_list_view" model="ir.ui.view">
+			<field name="name">fi.bank.list.view</field>
+			<field name="model">fi.bank</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Fiestas">
+					<field name="name" />
+					<field name="campaign_id"/>
+					<field name="amount_maravedies_provided" />
+				</tree>
+			</field>
+		</record>
+		         
+	</data>
+</openerp>

@@ -6,7 +6,7 @@
 			<field name="model">fi.campaign</field>
 			<field name="type">form</field>
 			<field name="arch" type="xml">
-				<form string="Etiqueta GS">
+				<form>
 				<header>
 					<button name="action_active_campaign" states="borrador" string="Abrir Fiesta" type="object" attrs="{'invisible': [('state','!=','borrador')]}" class="oe_form_buttons_view"/>
                     <button name="action_close_campaign" states="activa" string="Cerrar Fiesta" type="object" attrs="{'invisible': [('state','!=','activa')]}" class="oe_form_buttons_view"/>
@@ -14,33 +14,43 @@
                 </header>
 				<sheet>
 					<h1>
-                        <label string="Fiesta"/>
+                        <label string="Campaign configuration"/>
                     </h1>
 					<group>
 						<group>
-							<field name="name"		/>
-							<field name="event_date"	/>
+							<field name="name" />
+							<field name="event_date" />
 						</group>
+						<group>
+							<field name="centralbank_id" />
+							<field name="change_ratio"	/>
+						</group>
+					</group>
+					<group>
 						<group>
 							<field name="total_shops" readonly="True"/>
 							<field name="total_artisans" readonly="True"/>
-							<field name="amount_money" readonly="True"/>
+						</group>
+						<group>
+							<field name="total_new_money_amount" readonly="True"/>
+							<field name="amount_maravedies_changed" readonly="True"/>
 							<field name="amount_founding" readonly="True"/>
 							<field name="amount_payments" readonly="True"/>
 							<field name="amount_profits" readonly="True"/>
 						</group>
     				</group>
 					<notebook colspan="4">
-                    	<page string="Notes">
-                        	<field name="notes"/>    
-                        </page>
-                        <page string="Resumen de Puestos">
+                        <page string="Shops resume">
                         	<field name="shopplaces" readonly="True">
-                        		<field name="name" />
+                        		<tree>
+                        			<field name="name" />
+                        			<field name="partner_id"/>
+                        			<field name="type" />
+                        		</tree>
                         	</field>
                         </page>
-                        <page string="Resumen de Cajas">
-                        	<field name="cashplaces" widget="one2many" />
+                        <page string="Notes">
+                        	<field name="notes"/>    
                         </page>
                     </notebook>
     			</sheet>
@@ -58,7 +68,7 @@
 					<field name="event_date" />
 					<field name="total_shops" />
 					<field name="total_artisans" />
-					<field name="amount_money" />
+					<field name="amount_maravedies_changed" />
 					<field name="amount_profits" />
 					<field name="state" />
 				</tree>

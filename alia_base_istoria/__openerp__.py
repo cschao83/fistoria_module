@@ -36,7 +36,7 @@
 {
     "name": "Festa da Istoria",
     "version": "0.8",
-    "author": "Cástor Sánchez Chao",
+    "author": "Cástor Sánchez Chao - www.alialabs.com",
     'website': 'http://www.alialabs.com',
     'license': 'AGPL-3',
     "category": "Festa da Istoria",
@@ -58,10 +58,15 @@
              # Reports
 
              # Views
-             'views/partners_view.xml',
-             'views/fi_shopplace_view.xml',
-             'views/fi_campaign_view.xml',
-             'views/general_menu_view.xml',
+            'views/partners_view.xml',
+            'views/fi_bank_view.xml',
+            'views/fi_bankoperation_view.xml',
+            'views/fi_bankturn_view.xml',
+            'views/fi_bankplace_view.xml',
+            'views/fi_money_type_view.xml',
+            'views/fi_shopplace_view.xml',
+            'views/fi_campaign_view.xml',
+            'views/general_menu_view.xml',
         ],
 
     'installable': True,
