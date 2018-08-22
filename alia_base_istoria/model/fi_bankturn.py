@@ -15,8 +15,8 @@ class fi_bankturn(models.Model):
         vals['type'] = 'change'
         vals['turn_id'] = self.id
         vals['origin_bank_id'] = self.bankplace_id.id
-        vals['maravedies_amount'] = 10.0
-        vals['euros_amount'] = 10.0 * self.bankplace_id.change_ratio
+        vals['maravedies_amount'] = 10.0 * self.bankplace_id.change_ratio
+        vals['euros_amount'] = 10.0
         self.env['fi.bankoperation'].create(vals)
 
     @api.one
@@ -27,8 +27,8 @@ class fi_bankturn(models.Model):
         vals['turn_id'] = self.id
         vals['centralbank_id'] = self.bankplace_id.centralbank_id.id
         vals['origin_bank_id'] = self.bankplace_id.id
-        vals['maravedies_amount'] = 20.0
-        vals['euros_amount'] = 20.0 * self.bankplace_id.change_ratio
+        vals['maravedies_amount'] = 20.0 * self.bankplace_id.change_ratio
+        vals['euros_amount'] = 20.0
         self.env['fi.bankoperation'].create(vals)
 
     @api.one
@@ -39,8 +39,8 @@ class fi_bankturn(models.Model):
         vals['turn_id'] = self.id
         vals['centralbank_id'] = self.bankplace_id.centralbank_id.id
         vals['origin_bank_id'] = self.bankplace_id.id
-        vals['maravedies_amount'] = 50.0
-        vals['euros_amount'] = 50.0 * self.bankplace_id.change_ratio
+        vals['maravedies_amount'] = 50.0 * self.bankplace_id.change_ratio
+        vals['euros_amount'] = 50.0
         self.env['fi.bankoperation'].create(vals)
 
     @api.one
