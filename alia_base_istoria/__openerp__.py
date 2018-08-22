@@ -52,9 +52,9 @@
     """,
     'data': [
              # Data
-
+            'data/fistoria_profiles.xml',
              # Security
-
+            'security/ir.model.access.csv',
              # Reports
 
              # Views
