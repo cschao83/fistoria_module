@@ -59,6 +59,7 @@
 
              # Views
             'views/partners_view.xml',
+            'views/fi_template_additions.xml',
             'views/fi_bank_view.xml',
             'views/fi_bankoperation_view.xml',
             'views/fi_bankturn_view.xml',
@@ -68,7 +69,7 @@
             'views/fi_campaign_view.xml',
             'views/general_menu_view.xml',
         ],
-
+    'css': ['static/css/istoria.css'],
     'installable': True,
     'active': False,
 }

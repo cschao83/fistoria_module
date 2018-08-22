@@ -8,20 +8,14 @@
 			<field name="arch" type="xml">
 				<form>
 				<header>
+					<button name="action_open_bank" states="draft" string="Open Bank" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+					<button name="action_close_bank" states="open" string="Close Bank" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
                 	<field name="state" widget="statusbar" nolabel="1" />    
                 </header>
 				<sheet>
 					<h1>
                         <field name="name" attrs="{'readonly': [('state','!=', 'draft')]}"/>
                     </h1>
-               		<group>
-						<group>
-						</group>
-						<group>
-							<button name="action_open_bank" states="draft" string="Open Bank" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
-							<button name="action_close_bank" states="open" string="Close Bank" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
-						</group>
-    				</group>
 					<group>
 						<group>
 							<field name="campaign_id" attrs="{'readonly': [('state','!=', 'draft')]}"/>

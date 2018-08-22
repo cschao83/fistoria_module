@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+.oe_op_change_button_style {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 35px;
+}

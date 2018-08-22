@@ -110,7 +110,7 @@ msgstr "Operación do Banco"
 #. module: alia_base_istoria
 #: field:fi.bankoperation,turn_id:0
 msgid "Bank operator"
-msgstr "Banqueiro/a"
+msgstr "Quenda"
 
 #. module: alia_base_istoria
 #: view:fi.bankturn:alia_base_istoria.fi_bankturn_form_view
@@ -299,7 +299,7 @@ msgstr "Created by"
 #: field:fi.place,create_date:0
 #: field:fi.shopplace,create_date:0
 msgid "Created on"
-msgstr "Created on"
+msgstr "Rexistro"
 
 #. module: alia_base_istoria
 #: field:fi.campaign,event_date:0
@@ -391,7 +391,7 @@ msgstr "Fixo"
 #. module: alia_base_istoria
 #: model:ir.ui.menu,name:alia_base_istoria.fi_management_events
 msgid "Gestión de Global"
-msgstr "Xestión de Global"
+msgstr "Xestión Global"
 
 #. module: alia_base_istoria
 #: model:ir.ui.menu,name:alia_base_istoria.fi_management_places
@@ -401,7 +401,7 @@ msgstr "Xestión de Postos"
 #. module: alia_base_istoria
 #: model:ir.ui.menu,name:alia_base_istoria.root_menu_fi_management
 msgid "Herramienta de Gestión"
-msgstr "Ferramenta de Xestión"
+msgstr "Xestión Festa da Istoria"
 
 #. module: alia_base_istoria
 #: view:fi.bankturn:alia_base_istoria.fi_bankturn_form_view

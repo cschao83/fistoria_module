@@ -8,21 +8,14 @@
 			<field name="arch" type="xml">
 				<form>
 				<header>
+					<button name="action_active_turn" states="draft" string="Active turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+                    <button name="action_close_turn" states="active" string="Close turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
 					<field name="state" widget="statusbar" nolabel="1" />  
                 </header>
 				<sheet>
 					<h1>
 						<field name="name" attrs="{'readonly': [('state','!=', 'draft')]}"/> 
                     </h1>
-                    <group>
-                    	<group>
-                    		<button name="action_active_turn" states="draft" string="Active turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
-                    		<button name="action_close_turn" states="active" string="Close turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
-                    	</group>
-                    	<group>
-                    		
-                    	</group>
-                    </group>
 					<group>
 						<group>
 							<field name="campaign_id" readonly="True"/>
@@ -41,11 +34,12 @@
 						<page string="Operations" attrs="{'invisible': [('state','in', ['draft','closed'])]}">
                         	<group>
                         		<group>
-                        			<button name="action_change_ten" states="active" string="Change 10" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
-                        			<button name="action_change_twenty" states="active" string="Change 20" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+                        			<button name="action_change_ten" states="active" string="Change 10" type="object" groups="base.group_user" class="oe_form_buttons_view oe_op_change_button_style" style="font-size: 38px;"/>
+                        			<button name="action_change_twenty" states="active" string="Change 20" type="object" groups="base.group_user" class="oe_form_buttons_view oe_op_change_button_style" style="font-size: 38px;"/>
                         		</group>
                         		<group>
-                        			<button name="action_change_fifty" states="active" string="Change 50" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+                        			<button name="action_change_fifty" states="active" string="Change 50" type="object" groups="base.group_user" class="oe_form_buttons_view oe_op_change_button_style" style="font-size: 38px;"/>
+                        			<button name="" states="active" string="Cambio Variado" type="object" groups="base.group_user" class="oe_form_buttons_view oe_op_change_button_style" style="font-size: 38px;"/>
                         		</group>
                         	</group> 
                         </page>
@@ -53,6 +47,7 @@
                         	<field name="bankoperators" editable="bottom" attrs="{'readonly': [('state','in', ['closed'])]}">
                         		<tree>
                         		 	<field name="name"/>
+                        		 	<field name="phone"/>
                         		</tree>
                         	</field>    
                         </page>
@@ -84,8 +79,6 @@
 				<tree string="Turnos" colors="blue:state == 'draft';green:state == 'active';grey:state == 'closed'">
 					<field name="name" />
 					<field name="bankplace_id" />
-					<field name="time_init" />
-					<field name="time_finish" />
 					<field name="campaign_id" />
 					<field name="maravedies_remains" sum="Total maravedies"/>
 					<field name="euros_remains" sum="Total euros"/>
