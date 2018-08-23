@@ -8,8 +8,6 @@ class fi_shopplace(models.Model):
     _name = 'fi.shopplace'
     _description = 'Shops'
 
-
-
     place_id = fields.Many2one('fi.place', 'Place', required=True, ondelete="cascade", select=True, auto_join=True)
     partner_id = fields.Many2one('res.partner',string = "Owner", required=True)
     type = fields.Selection([('artisan','Artisan'),('fixed','Fixed'),('draw','Draw')])

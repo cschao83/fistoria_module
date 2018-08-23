@@ -43,6 +43,8 @@
     "depends": [
                 # Project Dependencies
                 'base',
+                'account',
+                'account_voucher',
                 # Base Dependencies
                 ],
 
@@ -58,6 +60,7 @@
              # Reports
 
              # Views
+            'views/account_voucher_view.xml',
             'views/partners_view.xml',
             'views/fi_template_additions.xml',
             'views/fi_bank_view.xml',

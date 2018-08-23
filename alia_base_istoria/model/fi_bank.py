@@ -43,12 +43,42 @@ class fi_bank(models.Model):
         self.amount_maravedies_for_shops = total
 
 
-    def _get_total_maravedies_changed(self):
+    def _get_total_maravedies_changed_by_operations(self):
         total = 0.0
         for bankplace in self.cashplaces:
             total = total + bankplace.total_m_changed
         self.total_maravedies_changed = total
 
+
+    def _get_total_maravedies_changed_by_cashing_out(self):
+        total = 0.0
+        for bankplace in self.cashplaces:
+            total = total + bankplace.total_m_changed
+        self.total_maravedies_changed = total
+
+
+    def _get_total_payments(self):
+        total = 0.0
+        for v in self.vouchers_payment:
+            total = total + v.amount
+        self.total_payments = total
+
+
+    def _get_total_entries(self):
+        total = 0.0
+        for v in self.vouchers_entry:
+            total = total + v.amount
+        self.total_entries = total
+
+
+    def _get_vouchers_payment(self):
+        vouchers = self.env['account.voucher'].search([('type','=','payment'),('centralbank_id','=',self.id)])
+        self.vouchers_payment = vouchers
+
+
+    def _get_vouchers_entry(self):
+        vouchers = self.env['account.voucher'].search([('type','=','receipt'),('centralbank_id','=',self.id)])
+        self.vouchers_entry = vouchers
 
 
     @api.multi
@@ -123,8 +153,8 @@ class fi_bank(models.Model):
         }
 
         return dict
-    
-    
+
+
     @api.multi
     def action_send_euros_to_turn(self):
         view = self.env.ref('alia_base_istoria.new_central_bank_send_e_operation_popup_form')
@@ -144,6 +174,45 @@ class fi_bank(models.Model):
         return dict
 
 
+    @api.multi
+    def action_register_payment(self):
+        view = self.env.ref('alia_base_istoria.view_vendor_payment_form_inherit')
+        dict = {
+            'name':'Registro de un pago',
+            'res_model': 'account.voucher',
+            'type': 'ir.actions.act_window',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'views': [(view.id, 'form')],
+            'view_id': view.id,
+            'target':'new',
+            'flags': {'form': {'action_buttons': True}},
+            'context': {'centralbank_id':self.id,'type':'payment'},
+        }
+
+        return dict
+
+
+    @api.multi
+    def action_register_entry(self):
+        view = self.env.ref('alia_base_istoria.view_vendor_receipt_form_inherit')
+        print self.id
+        dict = {
+            'name':'Registro de un cobro',
+            'res_model': 'account.voucher',
+            'type': 'ir.actions.act_window',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'views': [(view.id, 'form')],
+            'view_id': view.id,
+            'target':'new',
+            'flags': {'form': {'action_buttons': True}},
+            'context': {'centralbank_id':self.id,'type':'receipt'},
+        }
+
+        return dict
+
+
     name = fields.Char('Name')
     campaign_id = fields.Many2one('fi.campaign',string='Campaign')
     total_new_money = fields.One2many('fi.money.line','centralbank_id')
@@ -151,9 +220,14 @@ class fi_bank(models.Model):
     amount_maravedies_for_shops = fields.Float('Amount maravedies for shops',compute='_get_maravedies_reserved')
     amount_maravedies_for_banking = fields.Float(compute='_get_amount_available_maravedies',string="Amount maravedies in Central Bank")
     amount_euros_for_banking = fields.Float(compute='_get_amount_available_euros',string="Amount euros in Central Bank")
-    total_maravedies_changed = fields.Float('Total maravedies changed',compute='_get_total_maravedies_changed')
+    total_maravedies_changed = fields.Float('Total maravedies changed (Real Time)',compute='_get_total_maravedies_changed_by_operations')
+    total_maravedies_changed_fixed = fields.Float('Total maravedies changed (Cashing out)',compute='_get_total_maravedies_changed_by_cashing_out')
     cashplaces = fields.One2many('fi.bankplace','centralbank_id')
     operations = fields.One2many('fi.bankoperation','centralbank_id')
+    vouchers_payment = fields.One2many('account.voucher','centralbank_id',compute='_get_vouchers_payment')
+    vouchers_entry = fields.One2many('account.voucher','centralbank_id',compute='_get_vouchers_entry')
+    total_entries = fields.Float('Total entries',compute='_get_total_entries')
+    total_payments = fields.Float('Total payments',compute='_get_total_payments')
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

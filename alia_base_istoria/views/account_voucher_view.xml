@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>	
+			
+	
+		<record model="ir.ui.view" id="view_vendor_receipt_form_inherit">
+            <field name="name">"view.vendor.receipt.form.inherit"</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_vendor_receipt_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='partner_id']" position="before">
+            		<field name="centralbank_id" readonly="True"/>
+            	</xpath>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_vendor_payment_form_inherit">
+            <field name="name">"view.vendor.payment.form.inherit"</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_vendor_payment_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='partner_id']" position="before">
+            		<field name="centralbank_id" readonly="True"/>
+            	</xpath>
+            </field>
+        </record>
+    
+	</data>
+</openerp>
