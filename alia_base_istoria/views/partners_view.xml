@@ -18,9 +18,9 @@
             		<field name="fax" attrs="{'invisible':'True'}"/>
             	</xpath>
                 <xpath expr="//field[@name='website']" position="replace">
-                    <field name="dni" string=""/>
-                    <field name="customer" modifiers="{}"/>
-					<field name="supplier" modifiers="{}"/>
+                    <field name="volunteer"/>
+                    <field name="customer"/>
+                    <field name="supplier"/>
                 </xpath>
                 <xpath expr="//page[@name='sales_purchases']" position="replace">
                      <page name='shopplaces_list' string="Puestos">

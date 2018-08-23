@@ -12,6 +12,6 @@ class res_partner(models.Model):
     artisan = fields.Boolean('Artesano')
     shopplaces = fields.One2many('fi.shopplace','partner_id',copy=True)
     fields.Many2many('fi.bankturn','turn_partner_rel','partner_id','turn_id')
-    dni = fields.Char('Dni')
+
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
