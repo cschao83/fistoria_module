@@ -915,13 +915,13 @@ msgstr "Valor"
 #. module: alia_base_istoria
 #: field:res.partner,volunteer:0
 msgid "Voluntario"
-msgstr "Voluntario"
+msgstr "Voluntario/a"
 
 #. module: alia_base_istoria
 #: model:ir.actions.act_window,name:alia_base_istoria.action_volunteers_list
 #: model:ir.ui.menu,name:alia_base_istoria.fi_mngmt_volunteers
 msgid "Voluntarios"
-msgstr "Voluntarios"
+msgstr "Voluntarios/as"
 
 #. module: alia_base_istoria
 #: field:fi.bank,vouchers_entry:0
