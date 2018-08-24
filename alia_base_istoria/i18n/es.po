@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-23 20:13+0000\n"
-"PO-Revision-Date: 2018-08-23 20:13+0000\n"
+"POT-Creation-Date: 2018-08-24 00:46+0000\n"
+"PO-Revision-Date: 2018-08-24 00:46+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -95,7 +95,7 @@ msgstr "Banco"
 #. module: alia_base_istoria
 #: model:ir.model,name:alia_base_istoria.model_fi_bankoperation
 msgid "Bank Operation"
-msgstr "Bank Operation"
+msgstr "Operación"
 
 #. module: alia_base_istoria
 #: model:ir.model,name:alia_base_istoria.model_fi_bankoperator
@@ -152,7 +152,7 @@ msgstr "Bankoperations"
 #. module: alia_base_istoria
 #: field:fi.bankturn,bankplace_id:0
 msgid "Bankplace id"
-msgstr "Bankplace id"
+msgstr "Sucursal"
 
 #. module: alia_base_istoria
 #: model:ir.model,name:alia_base_istoria.model_fi_bankplace
@@ -168,6 +168,11 @@ msgstr "Lugar base"
 #: selection:fi.campaign,state:0
 msgid "Borrador"
 msgstr "Borrador"
+
+#. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "CBank Operations"
+msgstr "Operaciones BCentral"
 
 #. module: alia_base_istoria
 #: model:ir.model,name:alia_base_istoria.model_fi_cashplace
@@ -189,6 +194,12 @@ msgstr "Fiesta"
 #: view:fi.campaign:alia_base_istoria.fi_campaign_form_view
 msgid "Campaign configuration"
 msgstr "Configuración de la fiesta"
+
+#. module: alia_base_istoria
+#: view:fi.bankplace:alia_base_istoria.fi_bankplace_form_view
+#: view:fi.bankturn:alia_base_istoria.fi_bankturn_form_view
+msgid "Cashing out data"
+msgstr "Datos de Arqueos"
 
 #. module: alia_base_istoria
 #: field:fi.bank,cashplaces:0
@@ -323,6 +334,22 @@ msgid "Created on"
 msgstr "Created on"
 
 #. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "Data Cashing Out"
+msgstr "Data Cashing Out"
+
+#. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "Data rt Operations"
+msgstr "Datos operaciones RT"
+
+#. module: alia_base_istoria
+#: view:fi.bankplace:alia_base_istoria.fi_bankplace_form_view
+#: view:fi.bankturn:alia_base_istoria.fi_bankturn_form_view
+msgid "Data rt operations"
+msgstr "Datos operaciones RT"
+
+#. module: alia_base_istoria
 #: field:fi.campaign,event_date:0
 msgid "Date"
 msgstr "Fecha"
@@ -349,11 +376,6 @@ msgid "Display Name"
 msgstr "Nombre"
 
 #. module: alia_base_istoria
-#: field:res.partner,dni:0
-msgid "Dni"
-msgstr "Dni"
-
-#. module: alia_base_istoria
 #: selection:fi.bankplace,state:0
 #: selection:fi.bankturn,state:0
 #: selection:fi.shopplace,state:0
@@ -369,6 +391,11 @@ msgstr "Draw"
 #: selection:fi.bankoperation,type:0
 msgid "Entry"
 msgstr "Ingreso"
+
+#. module: alia_base_istoria
+#: field:fi.bankturn,co_estimated_euros:0
+msgid "Estimated euros"
+msgstr "Euros estimados"
 
 #. module: alia_base_istoria
 #: view:fi.shopplace:alia_base_istoria.fi_shopplace_form_view
@@ -407,7 +434,7 @@ msgstr "Fiestas"
 #. module: alia_base_istoria
 #: selection:fi.shopplace,type:0
 msgid "Fixed"
-msgstr "Fixed"
+msgstr "Fijo"
 
 #. module: alia_base_istoria
 #: model:ir.module.category,name:alia_base_istoria.fistoria_management_module
@@ -417,7 +444,7 @@ msgstr "Gestión Festa da Istoria"
 #. module: alia_base_istoria
 #: model:ir.ui.menu,name:alia_base_istoria.fi_management_events
 msgid "Gestión de Global"
-msgstr "Gestión Global"
+msgstr "Gestión de Global"
 
 #. module: alia_base_istoria
 #: model:ir.ui.menu,name:alia_base_istoria.fi_management_places
@@ -504,6 +531,16 @@ msgid "Last Updated on"
 msgstr "Last Updated on"
 
 #. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "M Cambiados"
+msgstr "M Cambiados"
+
+#. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "M Cambiados (Arqueo)"
+msgstr "M Cambiados (Arqueo)"
+
+#. module: alia_base_istoria
 #: model:res.groups,name:alia_base_istoria.group_manager
 msgid "Manager"
 msgstr "Responsable"
@@ -512,6 +549,11 @@ msgstr "Responsable"
 #: field:fi.bankoperation,maravedies_amount:0
 msgid "Maravedies amount"
 msgstr "Total Maravedies"
+
+#. module: alia_base_istoria
+#: field:fi.bankturn,co_total_m_received:0
+msgid "Maravedies received"
+msgstr "Maravedies recibidos"
 
 #. module: alia_base_istoria
 #: field:fi.bankturn,maravedies_remains:0
@@ -794,6 +836,18 @@ msgid "Total Maravedies changed"
 msgstr "Maravedies totales cambiados"
 
 #. module: alia_base_istoria
+#: field:fi.bank,co_total_m_changed:0
+#: field:fi.bankplace,co_total_m_changed:0
+#: field:fi.bankturn,co_total_m_changed:0
+msgid "Total Maravedies changed (cashing out)"
+msgstr "Total Maravedies cambiados (Arqueo)"
+
+#. module: alia_base_istoria
+#: field:fi.bankturn,co_total_m_remains:0
+msgid "Total Maravedies remained (cashing out)"
+msgstr "Total Maravedies sobrantes (Arqueo)"
+
+#. module: alia_base_istoria
 #: field:fi.campaign,total_artisans:0
 msgid "Total artisans"
 msgstr "Artesanos totales"
@@ -810,6 +864,17 @@ msgid "Total changed (Maravedies)"
 msgstr "Total cambiado (Maravedies)"
 
 #. module: alia_base_istoria
+#: view:fi.bankplace:alia_base_istoria.fi_bankplaces_list_view
+#: view:fi.bankturn:alia_base_istoria.fi_bankturns_list_view
+msgid "Total e got"
+msgstr "Total € obtenidos"
+
+#. module: alia_base_istoria
+#: view:fi.bankturn:alia_base_istoria.fi_bankturns_list_view
+msgid "Total e result"
+msgstr "Total € resultado"
+
+#. module: alia_base_istoria
 #: view:fi.bank:alia_base_istoria.fi_bank_form_view
 #: field:fi.bank,total_entries:0
 msgid "Total entries"
@@ -821,19 +886,37 @@ msgid "Total euros"
 msgstr "Total euros"
 
 #. module: alia_base_istoria
+#: field:fi.bankturn,co_euros_difference:0
+msgid "Total euros difference"
+msgstr "Diferencia €"
+
+#. module: alia_base_istoria
+#: field:fi.bank,co_total_e_got:0
+#: field:fi.bankplace,co_total_e_got:0
+#: field:fi.bankturn,co_total_e_got:0
+msgid "Total euros obtained (cashing out)"
+msgstr "Total euros obtenidos (Arqueo)"
+
+#. module: alia_base_istoria
+#: view:fi.bankplace:alia_base_istoria.fi_bankplaces_list_view
+#: view:fi.bankturn:alia_base_istoria.fi_bankturns_list_view
+msgid "Total m changed"
+msgstr "Total m cambiados"
+
+#. module: alia_base_istoria
 #: view:fi.bankturn:alia_base_istoria.fi_bankturns_list_view
 msgid "Total maravedies"
 msgstr "Total maravedies"
 
 #. module: alia_base_istoria
-#: field:fi.bank,total_maravedies_changed_fixed:0
+#: field:fi.bank,total_maravedies_changed_cashing_out:0
 msgid "Total maravedies changed (Cashing out)"
-msgstr "Total maravedies changed (Cashing out)"
+msgstr "Total maravedies cambiados (Arqueo)"
 
 #. module: alia_base_istoria
 #: field:fi.bank,total_maravedies_changed:0
 msgid "Total maravedies changed (Real Time)"
-msgstr "Total maravedies changed (Real Time)"
+msgstr "Total maravedies cambiados (Tiempo Real)"
 
 #. module: alia_base_istoria
 #: field:fi.bank,amount_maravedies_provided:0
@@ -915,13 +998,13 @@ msgstr "Valor"
 #. module: alia_base_istoria
 #: field:res.partner,volunteer:0
 msgid "Voluntario"
-msgstr "Voluntario/a"
+msgstr "Voluntario"
 
 #. module: alia_base_istoria
 #: model:ir.actions.act_window,name:alia_base_istoria.action_volunteers_list
 #: model:ir.ui.menu,name:alia_base_istoria.fi_mngmt_volunteers
 msgid "Voluntarios"
-msgstr "Voluntarios/as"
+msgstr "Voluntarios"
 
 #. module: alia_base_istoria
 #: field:fi.bank,vouchers_entry:0
@@ -932,4 +1015,14 @@ msgstr "Recibos de cobro"
 #: field:fi.bank,vouchers_payment:0
 msgid "Vouchers payment"
 msgstr "Recibos de pago"
+
+#. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "€ Devueltos"
+msgstr "€ Devueltos"
+
+#. module: alia_base_istoria
+#: view:fi.bank:alia_base_istoria.fi_bank_form_view
+msgid "€ Obtenidos (Arqueo)"
+msgstr "€ Obtenidos (Arqueo)"
 

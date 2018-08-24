@@ -50,9 +50,21 @@ class fi_bankturn(models.Model):
         return True
 
     @api.one
-    @api.depends
+    @api.depends('state')
     def action_close_turn(self):
+        #calculate cashing out
+        self.co_total_m_changed = self.co_total_m_received - self.co_total_m_remains
+        self.co_estimated_euros = (self.co_total_m_changed * 10)/9
+        self.co_euros_difference = self.co_estimated_euros - self.co_total_e_got
         self.write({'state':'closed'})
+        vals = {}
+        vals['type'] = 'receive'
+        vals['turn_id'] = self.id
+        vals['centralbank_id'] = self.bankplace_id.centralbank_id.id
+        vals['origin_bank_id'] = self.bankplace_id.id
+        vals['maravedies_amount'] = self.co_total_m_remains
+        vals['euros_amount'] = self.co_total_e_got
+        self.env['fi.bankoperation'].create(vals)
         return True
 
 
@@ -79,7 +91,7 @@ class fi_bankturn(models.Model):
 
     @api.one
     def _turn_total_changed(self):
-        toret = 0.0
+        toret = 0.00
         for op in self.bankoperations:
             if op.type in ['change']:
                 toret = toret + op.maravedies_amount
@@ -87,11 +99,20 @@ class fi_bankturn(models.Model):
 
     @api.one
     def _turn_total_returned(self):
-        toret = 0.0
+        toret = 0.00
         for op in self.bankoperations:
             if op.type in ['return']:
                 toret = toret + op.euros_amount
         self.turn_total_e_returned = toret
+
+    @api.one
+    def _co_get_total_maravedies_received(self):
+        toret = 0.00
+        for op in self.bankoperations:
+            if op.type in ['send'] and op.turn_id.id == self.id:
+                toret = toret + op.maravedies_amount
+        self.co_total_m_received = toret
+
 
     name = fields.Char('Turn name',required=True)
     time_init = fields.Datetime('Time init')
@@ -106,6 +127,14 @@ class fi_bankturn(models.Model):
     campaign_id = fields.Many2one(related='bankplace_id.campaign_id')
     notes = fields.Text()
     state = fields.Selection([('draft','Draft'),('active','Active'),('closed','Closed')],default='draft')
+
+    #cashing out attributes for change
+    co_total_m_received = fields.Float('Maravedies received',compute='_co_get_total_maravedies_received')
+    co_total_m_remains = fields.Float('Total Maravedies remained (cashing out)')
+    co_total_m_changed = fields.Float('Total Maravedies changed (cashing out)')
+    co_estimated_euros = fields.Float('Estimated euros')
+    co_total_e_got = fields.Float('Total euros obtained (cashing out)')
+    co_euros_difference = fields.Float('Total euros difference')
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

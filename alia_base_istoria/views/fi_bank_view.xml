@@ -16,14 +16,17 @@
 							<field name="campaign_id"/>
 							<field name="amount_maravedies_provided" readonly="True"/>
 							<field name="amount_maravedies_for_shops" readonly="True"/>
-							<field name="total_maravedies_changed" readonly="True"/>
 						</group>
 						<group>
+							<separator string="CBank Operations"/>
+							<newline/>
 							<button name="action_send_maravedies_to_turn" string="Send M to Turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
 							<button name="action_send_euros_to_turn" string="Send € to Turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
 							<button name="action_receive_maravedies_from_turn" string="Receive M from Turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
 							<button name="action_receive_euros_from_turn" string="Receive € from Turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
 							<button name="action_reserve_maravedies_to_shops" string="Reserve M for shops" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+    						<button name="action_register_payment" string="Register payment" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+    						<button name="action_register_entry" string="Register entry" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
 						</group>
     				</group>
     				<group>
@@ -32,10 +35,21 @@
     						<field name="amount_euros_for_banking" readonly="True"/>
     					</group>
     					<group>
-    						<button name="action_register_payment" string="Register payment" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
-    						<button name="action_register_entry" string="Register entry" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
     						<field name="total_entries" readonly="True"/>
     						<field name="total_payments" readonly="True"/>
+    					</group>
+    				</group>
+    				<group>
+    					<group>
+							<separator string="Data rt Operations"/>
+							<newline/>
+							<field name="total_maravedies_changed" readonly="True"/>
+    					</group>
+    					<group>
+    						<separator string="Data Cashing Out"/>
+							<newline/>
+							<field name="co_total_m_changed" />
+                        	<field name="co_total_e_got" />
     					</group>
     				</group>
 					<notebook colspan="4">
@@ -51,8 +65,10 @@
                         	<field name="cashplaces" readonly="True">
                         		<tree>
                         			<field name="name"/>
-                        			<field name="total_m_changed"/>
-                        			<field name="total_e_returned"/>
+                        			<field name="total_m_changed" string="M Cambiados"/>
+                        			<field name="total_e_returned" string="€ Devueltos"/>
+                        			<field name="co_total_m_changed" string="M Cambiados (Arqueo)"/>
+                        			<field name="co_total_e_got" string="€ Obtenidos (Arqueo)"/>
                         			<field name="state"/>
                         		</tree>
                         	</field>

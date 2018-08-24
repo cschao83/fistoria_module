@@ -36,6 +36,22 @@ class fi_bankplace(models.Model):
         self.write({'state':'open'})
         return True
 
+    @api.one
+    def _co_get_total_maravedies_changed(self):
+        total = 0.00
+        for t in self.bank_turns:
+            if t.state in ['closed']:
+                total = total + t.co_total_m_changed
+        self.co_total_m_changed = total
+
+    @api.one
+    def _co_get_total_euros_obtained(self):
+        total = 0.00
+        for t in self.bank_turns:
+            if t.state in ['closed']:
+                total = total + t.co_total_e_got
+        self.co_total_e_got = total
+
 
     place_id = fields.Many2one('fi.place', 'Place', required=True, ondelete="cascade", select=True, auto_join=True)
     responsible_id = fields.Many2one('res.partner',string = "Responsible", required=True)
@@ -47,6 +63,10 @@ class fi_bankplace(models.Model):
     state = fields.Selection([('draft','Draft'),('open','Open'),('closed','Closed')],default='draft')
     change_ratio = fields.Float(related='campaign_id.change_ratio')
     centralbank_id = fields.Many2one('fi.bank')
+
+    #cashing out
+    co_total_m_changed = fields.Float('Total Maravedies changed (cashing out)',compute='_co_get_total_maravedies_changed')
+    co_total_e_got = fields.Float('Total euros obtained (cashing out)',compute='_co_get_total_euros_obtained')
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
