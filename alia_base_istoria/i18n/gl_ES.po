@@ -49,7 +49,7 @@ msgstr "Axenda"
 #. module: alia_base_istoria
 #: field:fi.bank,amount_euros_for_banking:0
 msgid "Amount euros in Central Bank"
-msgstr "Euros totais no Banco Central"
+msgstr "€ totais no Banco Central"
 
 #. module: alia_base_istoria
 #: field:fi.bank,amount_maravedies_for_shops:0
@@ -405,12 +405,12 @@ msgstr "Etiqueta GS"
 #. module: alia_base_istoria
 #: field:fi.bankoperation,euros_amount:0
 msgid "Euros amount"
-msgstr "Euros totais"
+msgstr "€ totais"
 
 #. module: alia_base_istoria
 #: field:fi.bankturn,euros_remains:0
 msgid "Euros remains"
-msgstr "Euros restantes"
+msgstr "€ restantes"
 
 #. module: alia_base_istoria
 #: field:fi.bankplace,campaign_id:0
@@ -827,7 +827,7 @@ msgstr "Tipos de pagamentos"
 #: field:fi.bankplace,total_e_returned:0
 #: field:fi.bankturn,turn_total_e_returned:0
 msgid "Total Euros returned"
-msgstr "Euros totais devoltos"
+msgstr "€ totais devoltos"
 
 #. module: alia_base_istoria
 #: field:fi.bankplace,total_m_changed:0
@@ -883,19 +883,19 @@ msgstr "Total de cobros (€)"
 #. module: alia_base_istoria
 #: view:fi.bankturn:alia_base_istoria.fi_bankturns_list_view
 msgid "Total euros"
-msgstr "Total euros"
+msgstr "Total €"
 
 #. module: alia_base_istoria
 #: field:fi.bankturn,co_euros_difference:0
 msgid "Total euros difference"
-msgstr "Euros de diferencia"
+msgstr "€ de diferencia"
 
 #. module: alia_base_istoria
 #: field:fi.bank,co_total_e_got:0
 #: field:fi.bankplace,co_total_e_got:0
 #: field:fi.bankturn,co_total_e_got:0
 msgid "Total euros obtained (cashing out)"
-msgstr "Total euros obtained (cashing out)"
+msgstr "Total € obtained (cashing out)"
 
 #. module: alia_base_istoria
 #: view:fi.bankplace:alia_base_istoria.fi_bankplaces_list_view

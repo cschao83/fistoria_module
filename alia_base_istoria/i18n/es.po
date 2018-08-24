@@ -395,7 +395,7 @@ msgstr "Ingreso"
 #. module: alia_base_istoria
 #: field:fi.bankturn,co_estimated_euros:0
 msgid "Estimated euros"
-msgstr "Euros estimados"
+msgstr "€ estimados"
 
 #. module: alia_base_istoria
 #: view:fi.shopplace:alia_base_istoria.fi_shopplace_form_view
@@ -405,12 +405,12 @@ msgstr "Etiqueta GS"
 #. module: alia_base_istoria
 #: field:fi.bankoperation,euros_amount:0
 msgid "Euros amount"
-msgstr "Total euros"
+msgstr "Total €"
 
 #. module: alia_base_istoria
 #: field:fi.bankturn,euros_remains:0
 msgid "Euros remains"
-msgstr "Euros restantes"
+msgstr "€ restantes"
 
 #. module: alia_base_istoria
 #: field:fi.bankplace,campaign_id:0
@@ -827,7 +827,7 @@ msgstr "Tipos de pagos"
 #: field:fi.bankplace,total_e_returned:0
 #: field:fi.bankturn,turn_total_e_returned:0
 msgid "Total Euros returned"
-msgstr "Euros totales devueltos"
+msgstr "€ totales devueltos"
 
 #. module: alia_base_istoria
 #: field:fi.bankplace,total_m_changed:0
@@ -883,7 +883,7 @@ msgstr "Total cobrado (€)"
 #. module: alia_base_istoria
 #: view:fi.bankturn:alia_base_istoria.fi_bankturns_list_view
 msgid "Total euros"
-msgstr "Total euros"
+msgstr "Total €"
 
 #. module: alia_base_istoria
 #: field:fi.bankturn,co_euros_difference:0
@@ -895,7 +895,7 @@ msgstr "Diferencia €"
 #: field:fi.bankplace,co_total_e_got:0
 #: field:fi.bankturn,co_total_e_got:0
 msgid "Total euros obtained (cashing out)"
-msgstr "Total euros obtenidos (Arqueo)"
+msgstr "Total € obtenidos (Arqueo)"
 
 #. module: alia_base_istoria
 #: view:fi.bankplace:alia_base_istoria.fi_bankplaces_list_view
