@@ -50,13 +50,6 @@ class fi_bank(models.Model):
         self.total_maravedies_changed = total
 
 
-    def _get_total_maravedies_changed_by_cashing_out(self):
-        total = 0.0
-        for bankplace in self.cashplaces:
-            total = total + bankplace.total_m_changed
-        self.total_maravedies_changed = total
-
-
     def _get_total_payments(self):
         total = 0.0
         for v in self.vouchers_payment:
@@ -236,7 +229,6 @@ class fi_bank(models.Model):
     amount_maravedies_for_banking = fields.Float(compute='_get_amount_available_maravedies',string="Amount maravedies in Central Bank")
     amount_euros_for_banking = fields.Float(compute='_get_amount_available_euros',string="Amount euros in Central Bank")
     total_maravedies_changed = fields.Float('Total maravedies changed (Real Time)',compute='_get_total_maravedies_changed_by_operations')
-    total_maravedies_changed_cashing_out = fields.Float('Total maravedies changed (Cashing out)',compute='_get_total_maravedies_changed_by_cashing_out')
     cashplaces = fields.One2many('fi.bankplace','centralbank_id')
     operations = fields.One2many('fi.bankoperation','centralbank_id')
     vouchers_payment = fields.One2many('account.voucher','centralbank_id',compute='_get_vouchers_payment')

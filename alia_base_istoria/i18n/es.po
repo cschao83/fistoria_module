@@ -336,18 +336,18 @@ msgstr "Created on"
 #. module: alia_base_istoria
 #: view:fi.bank:alia_base_istoria.fi_bank_form_view
 msgid "Data Cashing Out"
-msgstr "Data Cashing Out"
+msgstr "Datos arqueados"
 
 #. module: alia_base_istoria
 #: view:fi.bank:alia_base_istoria.fi_bank_form_view
 msgid "Data rt Operations"
-msgstr "Datos operaciones RT"
+msgstr "Datos op. RT"
 
 #. module: alia_base_istoria
 #: view:fi.bankplace:alia_base_istoria.fi_bankplace_form_view
 #: view:fi.bankturn:alia_base_istoria.fi_bankturn_form_view
 msgid "Data rt operations"
-msgstr "Datos operaciones RT"
+msgstr "Datos op. RT"
 
 #. module: alia_base_istoria
 #: field:fi.campaign,event_date:0
