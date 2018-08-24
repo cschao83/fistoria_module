@@ -114,6 +114,27 @@ class fi_bankturn(models.Model):
         self.co_total_m_received = toret
 
 
+    @api.multi
+    def action_assign_maravedies(self):
+        view = self.env.ref('alia_base_istoria.new_central_bank_send_m_operation_popup_form')
+        dict = {
+            'name':'Recibir de Maravedies de un turno',
+            'res_model': 'fi.bankoperation',
+            'type': 'ir.actions.act_window',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'views': [(view.id, 'form')],
+            'view_id': view.id,
+            'target':'new',
+            'flags': {'form': {'action_buttons': True}},
+            'context': {'centralbank_id':self.bankplace_id.centralbank_id.id,
+                        'type':'send',
+                        'turn_id':self.id,
+                        'origin_bank_id':self.bankplace_id.id},
+        }
+
+        return dict
+
     name = fields.Char('Turn name',required=True)
     time_init = fields.Datetime('Time init')
     time_finish = fields.Datetime('Time finish')
@@ -125,7 +146,7 @@ class fi_bankturn(models.Model):
     euros_remains = fields.Float(string='Euros remains',compute='_euros_remains')
     bankoperations = fields.One2many('fi.bankoperation','turn_id')
     campaign_id = fields.Many2one(related='bankplace_id.campaign_id')
-    notes = fields.Text()
+    notes = fields.Text('Internal notes')
     state = fields.Selection([('draft','Draft'),('active','Active'),('closed','Closed')],default='draft')
 
     #cashing out attributes for change

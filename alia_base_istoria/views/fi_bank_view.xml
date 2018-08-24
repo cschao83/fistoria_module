@@ -105,6 +105,7 @@
                         			<field name="turn_id"/>
                         			<field name="maravedies_amount"/>
                         			<field name="euros_amount"/>
+                        			<field name="tpv_used" />
                         		</tree>
                         	</field>
                         </page>

@@ -10,6 +10,7 @@
 				<header>
 					<button name="action_active_turn" states="draft" string="Active turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
                     <button name="action_close_turn" states="active" string="Close turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+                    <button name="action_assign_maravedies" states="draft,active" string="Assign Maravedies" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
 					<field name="state" widget="statusbar" nolabel="1" />  
                 </header>
 				<sheet>
@@ -24,26 +25,27 @@
 							<field name="time_finish" attrs="{'readonly': [('state','!=', 'draft')]}"/>
 						</group>
 						<group>
-							<separator string="Data rt operations"/>
+							<separator string="Cashing out data"/>
 							<newline/>
-							<field name="maravedies_remains" readonly="True"/>
-							<field name="euros_remains" readonly="True" />
-							<field name="turn_total_m_changed" readonly="True"/>
-                        	<field name="turn_total_e_returned" readonly="True"/>
-						</group>
-    				</group>
-    				<separator string="Cashing out data"/>
-					<newline/>
-    				<group>	
-						<group>
 							<field name="co_total_m_remains" attrs="{'readonly': [('state','in', ['closed'])]}"/>
 							<field name="co_total_e_got" attrs="{'readonly': [('state','in', ['closed'])]}"/>
-						</group>
-						<group>
 							<field name="co_total_m_received" readonly="True"/>
 							<field name="co_total_m_changed" readonly="True" attrs="{'invisible': [('state','!=','closed')]}"/>
 							<field name="co_estimated_euros" readonly="True" attrs="{'invisible': [('state','!=','closed')]}"/>
 							<field name="co_euros_difference" readonly="True" attrs="{'invisible': [('state','!=','closed')]}"/>
+						</group>
+    				</group>
+    				<separator string="Data rt operations"/>
+					<newline/>
+    				<group>	
+						<group>
+							<field name="maravedies_remains" readonly="True"/>
+							<field name="euros_remains" readonly="True" />
+
+						</group>
+						<group>
+							<field name="turn_total_m_changed" readonly="True"/>
+                        	<field name="turn_total_e_returned" readonly="True"/>
 						</group>
     				</group>
 					<notebook colspan="4">
@@ -75,6 +77,7 @@
                         		 <field name="origin_bank_id"/>
                         		 <field name="maravedies_amount"/>
                         		 <field name="euros_amount"/>
+                        		 <field name="tpv_used" />
                         		</tree>
                         	</field>    
                         </page>

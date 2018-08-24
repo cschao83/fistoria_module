@@ -8,6 +8,8 @@
 			<field name="arch" type="xml">
 				<form string="Etiqueta GS">
 				<header>
+					<button name="action_reserve_place" states="draft" string="Make shop reserve" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+					<button name="action_activate_place" states="reserved" string="Activate shop" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
                 	<field name="state" widget="statusbar" nolabel="1" />    
                 </header>
 				<sheet>
@@ -18,6 +20,12 @@
 						<group>
 							<field name="name"			/>
 							<field name="campaign_id" readonly="True"/>
+							<field name="partner_id" />
+						</group>
+						<group>
+							<field name="type"/>
+							<field name="guaranty" />
+							<field name="m_cash_asigned" />
 						</group>
     				</group>
 					<notebook colspan="4">
@@ -36,8 +44,13 @@
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="Fiestas" colors="green:state=='activo';grey:state=='cerrado'">
-					<field name="name" />
-					<field name="campaign_id"    />
+					<field name="name"        />
+					<field name="campaign_id" />
+					<field name="type" 		  />
+					<field name="partner_id"  />
+					<field name="guaranty" />
+					<field name="m_cash_asigned" />
+					<field name="state" />
 				</tree>
 			</field>
 		</record>

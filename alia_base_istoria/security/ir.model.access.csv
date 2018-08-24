@@ -10,3 +10,4 @@ access_fi_money_line,money line,model_fi_money_line,group_user,1,1,1,1
 access_fi_money_type,money type,model_fi_money_type,group_user,1,1,1,1
 access_fi_payment_type,payment type,model_fi_payment_type,group_user,1,1,1,1
 access_fi_shopplace,shopplace,model_fi_shopplace,group_user,1,1,1,1
+access_fi_place,base place,model_fi_place,group_user,1,1,1,1

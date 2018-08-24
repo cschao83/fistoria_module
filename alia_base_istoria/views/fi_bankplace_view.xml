@@ -59,6 +59,7 @@
                         		 <field name="turn_id"/>
                         		 <field name="maravedies_amount"/>
                         		 <field name="euros_amount"/>
+                        		 <field name="tpv_used" />
                         		</tree>
                         	</field>    
                         </page>
@@ -76,7 +77,7 @@
 			<field name="model">fi.bankplace</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
-				<tree string="Fiestas">
+				<tree string="Fiestas" colors="blue:state=='draft';green:state=='open';grey:state=='closed'">
 					<field name="name" />
 					<field name="campaign_id" />
 					<field name="type" />
@@ -84,6 +85,7 @@
 					<field name="total_e_returned" sum="Total returned"/>
 					<field name="co_total_m_changed" sum="Total m changed"/>
 					<field name="co_total_e_got" sum="Total e got"/>
+					<field name="state" />
 				</tree>
 			</field>
 		</record>
