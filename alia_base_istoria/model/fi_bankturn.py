@@ -67,9 +67,7 @@ class fi_bankturn(models.Model):
         self.env['fi.bankoperation'].create(vals)
         return True
 
-en operaciones, puesto que los errores pueden acumularse (aunque a veces se compensan y pasan desapercibidos).
 
-En algunos casos extremos, el error es apreciable en cálculos muy sencillos:
     @api.one
     def _maravedies_remains(self):
         toret = 0.00
