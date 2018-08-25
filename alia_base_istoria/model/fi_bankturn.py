@@ -54,7 +54,7 @@ class fi_bankturn(models.Model):
     def action_close_turn(self):
         #calculate cashing out
         self.co_total_m_changed = self.co_total_m_received - self.co_total_m_remains
-        self.co_estimated_euros = (self.co_total_m_changed * 10)/9
+        #self.co_estimated_euros = (self.co_total_m_changed * 20)/18
         self.co_euros_difference = self.co_estimated_euros - self.co_total_e_got
         self.write({'state':'closed'})
         vals = {}
@@ -67,7 +67,9 @@ class fi_bankturn(models.Model):
         self.env['fi.bankoperation'].create(vals)
         return True
 
+en operaciones, puesto que los errores pueden acumularse (aunque a veces se compensan y pasan desapercibidos).
 
+En algunos casos extremos, el error es apreciable en cálculos muy sencillos:
     @api.one
     def _maravedies_remains(self):
         toret = 0.00

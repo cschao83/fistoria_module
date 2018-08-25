@@ -31,7 +31,7 @@
 							<field name="co_total_e_got" attrs="{'readonly': [('state','in', ['closed'])]}"/>
 							<field name="co_total_m_received" readonly="True"/>
 							<field name="co_total_m_changed" readonly="True" attrs="{'invisible': [('state','!=','closed')]}"/>
-							<field name="co_estimated_euros" readonly="True" attrs="{'invisible': [('state','!=','closed')]}"/>
+							<field name="co_estimated_euros" />
 							<field name="co_euros_difference" readonly="True" attrs="{'invisible': [('state','!=','closed')]}"/>
 						</group>
     				</group>
