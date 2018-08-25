@@ -98,7 +98,7 @@
                         	</field>
                         </page>
                         <page string="Bank operations">
-                        	<field name="operations" readonly="True">
+                        	<field name="operations">
                         		<tree>
                         			<field name="create_date"/>
                         			<field name="type"/>
