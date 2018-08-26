@@ -99,10 +99,6 @@
 					<field name="name" />
 					<field name="bankplace_id" />
 					<field name="campaign_id" />
-					<field name="maravedies_remains" sum="Total maravedies"/>
-					<field name="euros_remains" sum="Total euros"/>
-					<field name="turn_total_m_changed" sum="Total changed"/>
-					<field name="turn_total_e_returned" sum="Total returned"/>
 					<field name="co_total_m_changed" sum="Total m changed"/>
 					<field name="co_total_e_got" sum="Total e got"/>
 					<field name="co_euros_difference" sum="Total e result"/>

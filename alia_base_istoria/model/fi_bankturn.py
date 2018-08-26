@@ -55,7 +55,7 @@ class fi_bankturn(models.Model):
         #calculate cashing out
         self.co_total_m_changed = self.co_total_m_received - self.co_total_m_remains
         #self.co_estimated_euros = (self.co_total_m_changed * 20)/18
-        self.co_euros_difference = self.co_estimated_euros - self.co_total_e_got
+        self.co_euros_difference = self.co_total_e_got - self.co_estimated_euros
         self.write({'state':'closed'})
         vals = {}
         vals['type'] = 'receive'
