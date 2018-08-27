@@ -65,10 +65,11 @@
                         	<field name="cashplaces" readonly="True">
                         		<tree>
                         			<field name="name"/>
-                        			<field name="total_m_changed" string="M Cambiados"/>
-                        			<field name="total_e_returned" string="€ Devueltos"/>
+<!--                         			<field name="total_m_changed" string="M Cambiados"/>
+                        			<field name="total_e_returned" string="€ Devueltos"/> -->
                         			<field name="co_total_m_changed" string="M Cambiados (Arqueo)"/>
                         			<field name="co_total_e_got" string="€ Obtenidos (Arqueo)"/>
+                        			<field name="co_total_difference" sum="Differences"/>
                         			<field name="state"/>
                         		</tree>
                         	</field>

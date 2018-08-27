@@ -24,27 +24,28 @@
 							<field name="type" attrs="{'readonly': [('state','!=', 'draft')]}"/>
 						</group>
 						<group>
+						    <separator string="Cashing out data"/>
+							<newline/>
+							<field name="co_total_m_changed" readonly="True"/>
+							<field name="co_total_e_got" readonly="True"/>
+							<field name="co_total_difference" readonly="True"/>
+						</group>
+    				</group>
+<!--     				<group>
+						<group>
 							<separator string="Data rt operations"/>
 							<newline/>
 							<field name="total_m_changed" readonly="True"/>
 							<field name="total_e_returned" readonly="True"/>
 						</group>
-    				</group>
-    				<separator string="Cashing out data"/>
-					<newline/>
-    				<group>	
-						<group>
-							<field name="co_total_m_changed" readonly="True"/>
-							<field name="co_total_e_got" readonly="True"/>
-						</group>
-    				</group>
+    				</group> -->
 					<notebook colspan="4">
                   		<page string="Bank turns">
                         	<field name="bank_turns" readonly="True">
                         		<tree>
                         		 <field name="name"/>
-                        		 <field name="turn_total_m_changed"/>
-                        		 <field name="turn_total_e_returned"/>
+<!--                         		 <field name="turn_total_m_changed"/>
+                        		 <field name="turn_total_e_returned"/> -->
                         		 <field name="co_total_m_changed" />
                         		 <field name="co_estimated_euros" />
 								 <field name="co_euros_difference"/>
@@ -81,10 +82,11 @@
 					<field name="name" />
 					<field name="campaign_id" />
 					<field name="type" />
-					<field name="total_m_changed" sum="Total changed"/>
-					<field name="total_e_returned" sum="Total returned"/>
+<!-- 					<field name="total_m_changed" sum="Total changed"/>
+					<field name="total_e_returned" sum="Total returned"/> -->
 					<field name="co_total_m_changed" sum="Total m changed"/>
 					<field name="co_total_e_got" sum="Total e got"/>
+					<field name="co_total_difference" sum="Differences"/>
 					<field name="state" />
 				</tree>
 			</field>

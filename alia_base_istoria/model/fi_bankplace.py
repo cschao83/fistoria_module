@@ -52,13 +52,20 @@ class fi_bankplace(models.Model):
                 total = total + t.co_total_e_got
         self.co_total_e_got = total
 
+    @api.one
+    def _co_get_total_difference(self):
+        total = 0.00
+        for t in self.bank_turns:
+            if t.state in ['closed']:
+                total = total + t.co_euros_difference
+        self.co_total_difference = total
+
 
     place_id = fields.Many2one('fi.place', 'Place', required=True, ondelete="cascade", select=True, auto_join=True)
     responsible_id = fields.Many2one('res.partner',string = "Responsible", required=True)
     operations = fields.One2many('fi.bankoperation','origin_bank_id')
     bank_turns = fields.One2many('fi.bankturn','bankplace_id')
-    total_m_changed = fields.Float(compute='_total_changed',string='Total Maravedies changed')
-    total_e_returned = fields.Float(compute='_total_returned',string='Total Euros returned')
+
     type = fields.Selection([('central','Central'),('change','Change'),('return','Return'),('change-return','Change-Return')])
     state = fields.Selection([('draft','Draft'),('open','Open'),('closed','Closed')],default='draft')
     change_ratio = fields.Float(related='campaign_id.change_ratio')
@@ -67,6 +74,12 @@ class fi_bankplace(models.Model):
     #cashing out
     co_total_m_changed = fields.Float('Total Maravedies changed (cashing out)',compute='_co_get_total_maravedies_changed')
     co_total_e_got = fields.Float('Total euros obtained (cashing out)',compute='_co_get_total_euros_obtained')
+    co_total_difference = fields.Float('Total euros difference (cashing out)',compute='_co_get_total_difference')
+
+
+    #rt operations
+    total_m_changed = fields.Float(compute='_total_changed',string='Total Maravedies changed')
+    total_e_returned = fields.Float(compute='_total_returned',string='Total Euros returned')
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

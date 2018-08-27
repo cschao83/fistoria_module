@@ -27,15 +27,15 @@
 						<group>
 							<separator string="Cashing out data"/>
 							<newline/>
+							<field name="co_total_m_received" readonly="True" />
 							<field name="co_total_m_remains" attrs="{'readonly': [('state','in', ['closed'])]}"/>
-							<field name="co_total_e_got" attrs="{'readonly': [('state','in', ['closed'])]}"/>
-							<field name="co_total_m_received" readonly="True"/>
 							<field name="co_total_m_changed" readonly="True" attrs="{'invisible': [('state','!=','closed')]}"/>
-							<field name="co_estimated_euros" />
+							<field name="co_estimated_euros" readonly="True" />
+							<field name="co_total_e_got" attrs="{'readonly': [('state','in', ['closed'])]}"/>						
 							<field name="co_euros_difference" readonly="True" attrs="{'invisible': [('state','!=','closed')]}"/>
 						</group>
     				</group>
-    				<separator string="Data rt operations"/>
+<!--     				<separator string="Data rt operations"/>
 					<newline/>
     				<group>	
 						<group>
@@ -47,9 +47,9 @@
 							<field name="turn_total_m_changed" readonly="True"/>
                         	<field name="turn_total_e_returned" readonly="True"/>
 						</group>
-    				</group>
+    				</group> -->
 					<notebook colspan="4">
-						<page string="Operations" attrs="{'invisible': [('state','in', ['draft','closed'])]}">
+<!-- 						<page string="Operations" attrs="{'invisible': [('state','in', ['draft','closed'])]}">
                         	<group>
                         		<group>
                         			<button name="action_change_ten" states="active" string="Change 10" type="object" groups="base.group_user" class="oe_form_buttons_view oe_op_change_button_style" style="font-size: 38px;"/>
@@ -60,7 +60,7 @@
                         			<button name="" states="active" string="Cambio Variado" type="object" groups="base.group_user" class="oe_form_buttons_view oe_op_change_button_style" style="font-size: 38px;"/>
                         		</group>
                         	</group> 
-                        </page>
+                        </page> -->
               			<page string="Bank operators">
                         	<field name="bankoperators" editable="bottom" attrs="{'readonly': [('state','in', ['closed'])]}">
                         		<tree>
