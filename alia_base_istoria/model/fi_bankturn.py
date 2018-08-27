@@ -147,7 +147,7 @@ class fi_bankturn(models.Model):
     bankoperations = fields.One2many('fi.bankoperation','turn_id')
     campaign_id = fields.Many2one(related='bankplace_id.campaign_id')
     notes = fields.Text('Internal notes')
-    state = fields.Selection([('draft','Draft'),('active','Active'),('closed','Closed')],default='draft')
+    state = fields.Selection([('draft','Draft'),('active','Active'),('countingm','Counting M'),('closed','Cashing Out')],default='draft')
 
     #cashing out attributes for change
     co_total_m_received = fields.Float('Maravedies received',compute='_co_get_total_maravedies_received')

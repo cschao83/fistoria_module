@@ -32,7 +32,13 @@ class fi_bank(models.Model):
                 total = total - op.euros_amount
             if op.type in ['receive']:
                 total = total + op.euros_amount
-        self.amount_euros_for_banking = total
+        total = total + self.vouchers_balance
+        self.amount_euros_cash_euros_results = total
+
+
+    def _get_amount_total_euros_results(self):
+        total = 0.0
+        self.amount_total_euros_results_from_bank = self.amount_euros_cash_euros_results
 
 
     def _get_maravedies_reserved(self):
@@ -62,6 +68,10 @@ class fi_bank(models.Model):
         for v in self.vouchers_entry:
             total = total + v.amount
         self.total_entries = total
+
+
+    def _get_vouchers_balance(self):
+        self.vouchers_balance = self.total_entries - self.total_payments
 
 
     def _get_vouchers_payment(self):
@@ -107,42 +117,6 @@ class fi_bank(models.Model):
             'target':'new',
             'flags': {'form': {'action_buttons': True}},
             'context': {'centralbank_id':self.id,'type':'send'},
-        }
-
-        return dict
-
-    @api.multi
-    def action_receive_maravedies_from_turn(self):
-        view = self.env.ref('alia_base_istoria.new_central_bank_receive_m_operation_popup_form')
-        dict = {
-            'name':'Recibo de Maravedies de un turno',
-            'res_model': 'fi.bankoperation',
-            'type': 'ir.actions.act_window',
-            'view_type': 'form',
-            'view_mode': 'form',
-            'views': [(view.id, 'form')],
-            'view_id': view.id,
-            'target':'new',
-            'flags': {'form': {'action_buttons': True}},
-            'context': {'centralbank_id':self.id,'type':'receive'},
-        }
-
-        return dict
-    
-    @api.multi
-    def action_receive_euros_from_turn(self):
-        view = self.env.ref('alia_base_istoria.new_central_bank_receive_e_operation_popup_form')
-        dict = {
-            'name':'Recibo de Euros de un turno',
-            'res_model': 'fi.bankoperation',
-            'type': 'ir.actions.act_window',
-            'view_type': 'form',
-            'view_mode': 'form',
-            'views': [(view.id, 'form')],
-            'view_id': view.id,
-            'target':'new',
-            'flags': {'form': {'action_buttons': True}},
-            'context': {'centralbank_id':self.id,'type':'receive'},
         }
 
         return dict
@@ -207,6 +181,7 @@ class fi_bank(models.Model):
 
 
     @api.one
+    @api.depends('cashplaces')
     def _co_get_total_m_changed(self):
         total = 0.0
         for c in self.cashplaces:
@@ -214,6 +189,7 @@ class fi_bank(models.Model):
         self.co_total_m_changed = total
 
     @api.one
+    @api.depends('cashplaces')
     def _co_get_total_e_obtained(self):
         total = 0.0
         for c in self.cashplaces:
@@ -227,7 +203,8 @@ class fi_bank(models.Model):
     amount_maravedies_provided = fields.Float('Total maravedies provided',compute='_get_total_maravedies_provided')
     amount_maravedies_for_shops = fields.Float('Amount maravedies for shops',compute='_get_maravedies_reserved')
     amount_maravedies_for_banking = fields.Float(compute='_get_amount_available_maravedies',string="Amount maravedies in Central Bank")
-    amount_euros_for_banking = fields.Float(compute='_get_amount_available_euros',string="Amount euros in Central Bank")
+    amount_euros_cash_euros_results = fields.Float(compute='_get_amount_available_euros',string="Amount cash euros in Central Bank")
+    amount_total_euros_results_from_bank = fields.Float(compute='_get_amount_total_euros_results',string="Amount total euros results")
     total_maravedies_changed = fields.Float('Total maravedies changed (Real Time)',compute='_get_total_maravedies_changed_by_operations')
     cashplaces = fields.One2many('fi.bankplace','centralbank_id')
     operations = fields.One2many('fi.bankoperation','centralbank_id')
@@ -235,10 +212,11 @@ class fi_bank(models.Model):
     vouchers_entry = fields.One2many('account.voucher','centralbank_id',compute='_get_vouchers_entry')
     total_entries = fields.Float('Total entries',compute='_get_total_entries')
     total_payments = fields.Float('Total payments',compute='_get_total_payments')
+    vouchers_balance = fields.Float('Vouchers Balance',compute='_get_vouchers_balance')
 
     #cashing out
-    co_total_m_changed = fields.Float('Total Maravedies changed (cashing out)',compute='_co_get_total_m_changed')
-    co_total_e_got = fields.Float('Total euros obtained (cashing out)',compute='_co_get_total_e_obtained')
+    co_total_m_changed = fields.Float('Total Maravedies changed (cashing out)',compute='_co_get_total_m_changed',store=True)
+    co_total_e_got = fields.Float('Total euros obtained (cashing out)',compute='_co_get_total_e_obtained',store=True)
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

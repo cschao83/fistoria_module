@@ -66,7 +66,7 @@ class fi_bankplace(models.Model):
     operations = fields.One2many('fi.bankoperation','origin_bank_id')
     bank_turns = fields.One2many('fi.bankturn','bankplace_id')
 
-    type = fields.Selection([('central','Central'),('change','Change'),('return','Return'),('change-return','Change-Return')])
+    type = fields.Selection([('cr2010','Quick Change 20 and 10'),('cr50','Quick Change 50'),('return','Return'),('mixed','Mixed Change')])
     state = fields.Selection([('draft','Draft'),('open','Open'),('closed','Closed')],default='draft')
     change_ratio = fields.Float(related='campaign_id.change_ratio')
     centralbank_id = fields.Many2one('fi.bank')

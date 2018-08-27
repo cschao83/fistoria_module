@@ -18,12 +18,10 @@
 							<field name="amount_maravedies_for_shops" readonly="True"/>
 						</group>
 						<group>
-							<separator string="CBank Operations"/>
+							<separator string="CBank Operations" style="width:100%"/>
 							<newline/>
 							<button name="action_send_maravedies_to_turn" string="Send M to Turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
 							<button name="action_send_euros_to_turn" string="Send € to Turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
-							<button name="action_receive_maravedies_from_turn" string="Receive M from Turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
-							<button name="action_receive_euros_from_turn" string="Receive € from Turn" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
 							<button name="action_reserve_maravedies_to_shops" string="Reserve M for shops" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
     						<button name="action_register_payment" string="Register payment" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
     						<button name="action_register_entry" string="Register entry" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
@@ -31,12 +29,18 @@
     				</group>
     				<group>
     					<group>
+    						<separator string="Bank Results"/>
+							<newline/>
     						<field name="amount_maravedies_for_banking" readonly="True"/>
-    						<field name="amount_euros_for_banking" readonly="True"/>
+    						<field name="amount_euros_cash_euros_results" readonly="True"/>
+    						<field name="amount_total_euros_results_from_bank" readonly="True"/>
     					</group>
     					<group>
+    						<separator string="Entry/Payment"/>
+							<newline/>
     						<field name="total_entries" readonly="True"/>
     						<field name="total_payments" readonly="True"/>
+    						<field name="vouchers_balance" readonly="True"/>
     					</group>
     				</group>
     				<group>
@@ -120,6 +124,7 @@
 			<field name="name">fi.bank.list.view</field>
 			<field name="model">fi.bank</field>
 			<field name="type">tree</field>
+			<field name="view_mode">tree,graph</field>
 			<field name="arch" type="xml">
 				<tree string="Fiestas">
 					<field name="name" />
@@ -127,10 +132,23 @@
 					<field name="amount_maravedies_provided" />
 					<field name="co_total_m_changed" />
 					<field name="co_total_e_got" />
-					<field name="total_entries" />
-					<field name="total_payments" />
+					<field name="vouchers_balance" />
+					<field name="amount_euros_cash_euros_results" />
+    				<field name="amount_total_euros_results_from_bank"/>
 				</tree>
 			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="fi_bank_graph_view">
+   			<field name="name">fi.bank.graph.view</field>
+   			<field name="model">fi.bank</field>
+   			<field name="type">graph</field>
+  			<field name="arch" type="xml">
+         		<graph string="Bank Evolution">
+         			<field name="name" group="True"/>
+         			<field name="co_total_e_got" />
+        		</graph>
+    		</field>
 		</record>
 		         
 	</data>

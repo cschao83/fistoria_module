@@ -14,7 +14,7 @@
 		<act_window id="action_artisans_shopplaces_list" name="Puestos Artesanos" res_model="fi.shopplace" view_mode="tree,form" />
 		
 		<!-- Menu Bancos -->
-		<act_window id="action_banks_list" name="Banco anual" res_model="fi.bank" view_mode="tree,form" />
+		<act_window id="action_banks_list" name="Banco anual" res_model="fi.bank" view_mode="tree,form,graph" />
 		<act_window id="action_bankplaces_list" name="Sucursales" res_model="fi.bankplace" view_mode="tree,form" />
 		<act_window id="action_bankturns_list" name="Turnos" res_model="fi.bankturn" view_mode="tree,form" />
 		
