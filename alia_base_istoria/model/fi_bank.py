@@ -32,7 +32,7 @@ class fi_bank(models.Model):
                 total = total - op.euros_amount
             if op.type in ['receive']:
                 total = total + op.euros_amount
-        total = total + self.vouchers_balance
+        total = total + self.vouchers_balance - self.co_total_e_returned
         self.amount_euros_cash_euros_results = total
 
 
@@ -196,6 +196,13 @@ class fi_bank(models.Model):
             total = total + c.co_total_e_got
         self.co_total_e_got = total
 
+    @api.one
+    @api.depends('return_cashplaces')
+    def _co_get_total_e_returned(self):
+        total = 0.0
+        for c in self.return_cashplaces:
+            total = total + c.co_total_difference
+        self.co_total_e_returned = total
 
     name = fields.Char('Name')
     campaign_id = fields.Many2one('fi.campaign',string='Campaign')
@@ -207,6 +214,7 @@ class fi_bank(models.Model):
     amount_total_euros_results_from_bank = fields.Float(compute='_get_amount_total_euros_results',string="Amount total euros results")
     total_maravedies_changed = fields.Float('Total maravedies changed (Real Time)',compute='_get_total_maravedies_changed_by_operations')
     cashplaces = fields.One2many('fi.bankplace','centralbank_id')
+    return_cashplaces = fields.One2many('fi.return.bankplace','centralbank_id')
     operations = fields.One2many('fi.bankoperation','centralbank_id')
     vouchers_payment = fields.One2many('account.voucher','centralbank_id',compute='_get_vouchers_payment')
     vouchers_entry = fields.One2many('account.voucher','centralbank_id',compute='_get_vouchers_entry')
@@ -217,6 +225,7 @@ class fi_bank(models.Model):
     #cashing out
     co_total_m_changed = fields.Float('Total Maravedies changed (cashing out)',compute='_co_get_total_m_changed',store=True)
     co_total_e_got = fields.Float('Total euros obtained (cashing out)',compute='_co_get_total_e_obtained',store=True)
+    co_total_e_returned = fields.Float('Total euros returned (cashing out)',compute='_co_get_total_e_returned')
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

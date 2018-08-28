@@ -54,6 +54,7 @@
 							<newline/>
 							<field name="co_total_m_changed" />
                         	<field name="co_total_e_got" />
+                        	<field name="co_total_e_returned"/>
     					</group>
     				</group>
 					<notebook colspan="4">
@@ -69,11 +70,22 @@
                         	<field name="cashplaces" readonly="True">
                         		<tree>
                         			<field name="name"/>
-<!--                         			<field name="total_m_changed" string="M Cambiados"/>
-                        			<field name="total_e_returned" string="€ Devueltos"/> -->
+                        			<field name="type" />
                         			<field name="co_total_m_changed" string="M Cambiados (Arqueo)"/>
                         			<field name="co_total_e_got" string="€ Obtenidos (Arqueo)"/>
                         			<field name="co_total_difference" sum="Differences"/>
+                        			<field name="state"/>
+                        		</tree>
+                        	</field>
+                        </page>
+                        <page string="Return Bank places">
+                        	<field name="return_cashplaces" readonly="True">
+                        		<tree>
+                        			<field name="name"/>
+                        			<field name="type" />
+                        			<field name="total_received_euros" string="€ Recibidos"/>
+                        			<field name="co_total_e_got" string="€ Sobrantes (Arqueo)"/>
+                        			<field name="co_total_difference" string="€ Cambiados (Arqueo)" sum="Differences"/>
                         			<field name="state"/>
                         		</tree>
                         	</field>
@@ -108,6 +120,7 @@
                         			<field name="create_date"/>
                         			<field name="type"/>
                         			<field name="turn_id"/>
+                        			<field name="origin_bank_id"/>
                         			<field name="maravedies_amount"/>
                         			<field name="euros_amount"/>
                         			<field name="tpv_used" />
@@ -132,6 +145,7 @@
 					<field name="amount_maravedies_provided" />
 					<field name="co_total_m_changed" />
 					<field name="co_total_e_got" />
+					<field name="co_total_e_returned" />
 					<field name="vouchers_balance" />
 					<field name="amount_euros_cash_euros_results" />
     				<field name="amount_total_euros_results_from_bank"/>

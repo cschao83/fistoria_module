@@ -15,7 +15,8 @@
 		
 		<!-- Menu Bancos -->
 		<act_window id="action_banks_list" name="Banco anual" res_model="fi.bank" view_mode="tree,form,graph" />
-		<act_window id="action_bankplaces_list" name="Sucursales" res_model="fi.bankplace" view_mode="tree,form" />
+		<act_window id="action_bankplaces_list" name="Cajas Cambio " res_model="fi.bankplace" view_mode="tree,form" />
+		<act_window id="action_return_bankplaces_list" name="Cajas Recambio" res_model="fi.return.bankplace" view_mode="tree,form" />
 		<act_window id="action_bankturns_list" name="Turnos" res_model="fi.bankturn" view_mode="tree,form" />
 		
 		<!-- Menu Config -->
@@ -41,7 +42,8 @@
 
 		<menuitem id="fi_management_bank" name="Banco" parent="root_menu_fi_management" sequence="4"/>
 			<menuitem id="fi_mngmt_banks" name="Banco central" action="action_banks_list" parent="fi_management_bank" sequence="0"/>
-			<menuitem id="fi_mngmt_bankplaces" name="Cajas" action="action_bankplaces_list" parent="fi_management_bank" sequence="1"/>
+			<menuitem id="fi_mngmt_bankplaces" name="Cajas de cambio" action="action_bankplaces_list" parent="fi_management_bank" sequence="1"/>
+			<menuitem id="fi_mngmt_return_bankplaces" name="Cajas de recambio" action="action_return_bankplaces_list" parent="fi_management_bank" sequence="1"/>
 			<menuitem id="fi_mngmt_bankturns" name="Turnos" action="action_bankturns_list" parent="fi_management_bank" sequence="2"/>	
 	
 		<menuitem id="fi_config" name="Tablas Maestras" parent="root_menu_fi_management" sequence="40"/>

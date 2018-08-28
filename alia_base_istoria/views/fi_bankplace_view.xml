@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
+	
+	<!-- CAJAS DE CAMBIO -->
+	
 		<record id="fi_bankplace_form_view" model="ir.ui.view">
 			<field name="name">fi.bankplace.form.view</field>
 			<field name="model">fi.bankplace</field>
@@ -91,6 +94,90 @@
 				</tree>
 			</field>
 		</record>
+		
+		
+		<!-- CAJAS DE RECAMBIO -->
+		
+		<record id="fi_return_bankplace_form_view" model="ir.ui.view">
+			<field name="name">fi.return.bankplace.form.view</field>
+			<field name="model">fi.return.bankplace</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form>
+				<header>
+					<button name="action_open_bank" states="draft" string="Open Bank" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+					<button name="action_close_bank" states="open" string="Close Bank" type="object" groups="base.group_user" class="oe_form_buttons_view"/>
+                	<field name="state" widget="statusbar" nolabel="1" />    
+                </header>
+				<sheet>
+					<h1>
+                        <field name="name" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+                    </h1>
+					<group>
+						<group>
+							<field name="campaign_id" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+							<field name="centralbank_id" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+							<field name="responsible_id" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+							<field name="type" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+						</group>
+						<group>
+						    <separator string="Cashing out data"/>
+							<newline/>
+							<field name="total_received_euros" readonly="True"/>
+							<field name="co_total_e_got"/>
+							<field name="co_total_difference" readonly="True"/>
+						</group>
+    				</group>
+					<notebook colspan="4">
+<!--                   		<page string="Bank turns">
+                        	<field name="bank_turns" readonly="True">
+                        		<tree>
+                        		 <field name="name"/>
+                        		 <field name="co_total_m_changed" />
+                        		 <field name="co_estimated_euros" />
+								 <field name="co_euros_difference"/>
+                        		</tree>
+                        	</field>    
+                        </page> -->
+					    <page string="Operations">
+                        	<field name="operations" readonly="True">
+                        		<tree>
+                        		 <field name="type"/>
+                        		 <field name="origin_bank_id"/>
+                        		 <field name="turn_id"/>
+                        		 <field name="maravedies_amount"/>
+                        		 <field name="euros_amount"/>
+                        		 <field name="tpv_used" />
+                        		</tree>
+                        	</field>    
+                        </page>
+                    	<page string="Notes">
+                        	<field name="notes"/>    
+                        </page>
+                    </notebook>
+    			</sheet>
+				</form>
+			</field>
+		</record>
+		
+		
+		<record id="fi_return_bankplaces_list_view" model="ir.ui.view">
+			<field name="name">fi.return.bankplaces.list.view</field>
+			<field name="model">fi.return.bankplace</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Fiestas" colors="blue:state=='draft';green:state=='open';grey:state=='closed'">
+					<field name="name" />
+					<field name="campaign_id" />
+					<field name="type" />
+					<field name="total_received_euros" string="€ Recibidos" sum="Total e received"/>
+					<field name="co_total_e_got" string="€ Sobrantes (Arqueo)" sum="Total e got"/>
+					<field name="co_total_difference" string="€ Devueltos (Arqueo)" sum="Differences"/>
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+		
 		         
 	</data>
 </openerp>
