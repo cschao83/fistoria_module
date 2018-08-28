@@ -32,7 +32,7 @@ class fi_bank(models.Model):
                 total = total - op.euros_amount
             if op.type in ['receive']:
                 total = total + op.euros_amount
-        total = total + self.vouchers_balance - self.co_total_e_returned
+        total = total + self.vouchers_balance
         self.amount_euros_cash_euros_results = total
 
 
