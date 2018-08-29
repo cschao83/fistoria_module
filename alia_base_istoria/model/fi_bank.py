@@ -7,14 +7,14 @@ class fi_bank(models.Model):
     _name = 'fi.bank'
     _description = 'Bank'
 
-
+    @api.one
     def _get_total_maravedies_provided(self):
         total = 0.0
         for line in self.total_new_money:
             total = total + line.money_type.value * line.qty
         self.amount_maravedies_provided = total
 
-
+    @api.one
     def _get_amount_available_maravedies(self):
         total = self.amount_maravedies_provided - self.amount_maravedies_for_shops
         for op in self.operations:
@@ -24,7 +24,7 @@ class fi_bank(models.Model):
                 total = total + op.maravedies_amount
         self.amount_maravedies_for_banking = total
 
-
+    @api.one
     def _get_amount_available_euros(self):
         total = 0.0
         for op in self.operations:
@@ -35,7 +35,7 @@ class fi_bank(models.Model):
         total = total + self.vouchers_balance
         self.amount_euros_cash_euros_results = total + self.total_loans
 
-
+    @api.one
     def _get_maravedies_reserved(self):
         total = 0.0
         for op in self.operations:
@@ -43,37 +43,37 @@ class fi_bank(models.Model):
                 total = total + op.maravedies_amount
         self.amount_maravedies_for_shops = total
 
-
+    @api.one
     def _get_total_maravedies_changed_by_operations(self):
         total = 0.0
         for bankplace in self.cashplaces:
             total = total + bankplace.total_m_changed
         self.total_maravedies_changed = total
 
-
+    @api.one
     def _get_total_payments(self):
         total = 0.0
         for v in self.vouchers_payment:
             total = total + v.amount
         self.total_payments = total
 
-
+    @api.one
     def _get_total_entries(self):
         total = 0.0
         for v in self.vouchers_entry:
             total = total + v.amount
         self.total_entries = total
 
-
+    @api.one
     def _get_vouchers_balance(self):
         self.vouchers_balance = self.total_entries - self.total_payments
 
-
+    @api.one
     def _get_vouchers_payment(self):
         vouchers = self.env['account.voucher'].search([('type','=','payment'),('centralbank_id','=',self.id)])
         self.vouchers_payment = vouchers
 
-
+    @api.one
     def _get_vouchers_entry(self):
         vouchers = self.env['account.voucher'].search([('type','=','receipt'),('centralbank_id','=',self.id)])
         self.vouchers_entry = vouchers
