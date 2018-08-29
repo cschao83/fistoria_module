@@ -53,6 +53,7 @@
     						<separator string="Data Cashing Out"/>
 							<newline/>
 							<field name="co_total_m_changed" />
+							<field name="co_total_e_cash_got" />
                         	<field name="co_total_e_got" />
                         	<field name="co_total_e_returned"/>
     					</group>
