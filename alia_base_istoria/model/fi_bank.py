@@ -193,7 +193,7 @@ class fi_bank(models.Model):
     def _co_get_total_e_obtained(self):
         total = 0.0
         for c in self.cashplaces:
-            total = total + c.co_total_e_got
+            total = total + c.co_total_e_got + c.co_total_e_paycard
         self.co_total_e_got = total
 
     @api.one
@@ -201,7 +201,7 @@ class fi_bank(models.Model):
     def _co_get_total_e_obtained_without_paycard(self):
         total = 0.0
         for c in self.cashplaces:
-            total = total + c.co_total_e_got - c.co_total_e_paycard
+            total = total + c.co_total_e_got
         self.co_total_e_cash_got = total
 
     @api.one
