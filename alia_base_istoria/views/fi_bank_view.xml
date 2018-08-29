@@ -56,6 +56,7 @@
 							<field name="co_total_e_cash_got" />
                         	<field name="co_total_e_got" />
                         	<field name="co_total_e_returned"/>
+                        	<field name="co_total_e_not_returned"/>
     					</group>
     				</group>
 					<notebook colspan="4">

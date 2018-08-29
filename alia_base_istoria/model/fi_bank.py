@@ -212,6 +212,10 @@ class fi_bank(models.Model):
             total = total + c.co_total_difference
         self.co_total_e_returned = total
 
+    @api.one
+    def _co_get_total_e_not_returned(self):
+        self.co_total_e_not_returned = self.co_total_m_changed - self.co_total_e_returned
+
 
     name = fields.Char('Name')
     campaign_id = fields.Many2one('fi.campaign',string='Campaign')
@@ -236,6 +240,6 @@ class fi_bank(models.Model):
     co_total_e_cash_got = fields.Float('Total euros obtained in cash (cashing out)',compute='_co_get_total_e_obtained_without_paycard')
     co_total_e_got = fields.Float('Total euros obtained adding paycard (cashing out)',compute='_co_get_total_e_obtained')
     co_total_e_returned = fields.Float('Total euros returned (cashing out)',compute='_co_get_total_e_returned')
-
+    co_total_e_not_returned = fields.Float('Total euros not returned',compute='_co_get_total_e_not_returned')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
