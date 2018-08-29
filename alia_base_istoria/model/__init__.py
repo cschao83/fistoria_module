@@ -45,6 +45,7 @@ from . import fi_bank
 from . import fi_bankplace
 from . import fi_bankoperation
 from . import fi_bankturn
+from . import fi_bankloan
 from . import res_partner
 from . import account_voucher
 

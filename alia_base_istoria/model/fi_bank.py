@@ -33,12 +33,7 @@ class fi_bank(models.Model):
             if op.type in ['receive']:
                 total = total + op.euros_amount
         total = total + self.vouchers_balance
-        self.amount_euros_cash_euros_results = total
-
-
-    def _get_amount_total_euros_results(self):
-        total = 0.0
-        self.amount_total_euros_results_from_bank = self.amount_euros_cash_euros_results
+        self.amount_euros_cash_euros_results = total + self.total_loans
 
 
     def _get_maravedies_reserved(self):
@@ -216,6 +211,18 @@ class fi_bank(models.Model):
     def _co_get_total_e_not_returned(self):
         self.co_total_e_not_returned = self.co_total_m_changed - self.co_total_e_returned
 
+    @api.one
+    def _get_bank_benefit(self):
+        benefit = self.co_total_e_got * 0.1
+        benefit = benefit + self.co_total_e_not_returned
+        self.bank_benefit = benefit
+
+    @api.one
+    def _get_total_loans(self):
+        total = 0.0
+        for l in self.bankloans:
+            total += l.amount
+        self.total_loans = total
 
     name = fields.Char('Name')
     campaign_id = fields.Many2one('fi.campaign',string='Campaign')
@@ -224,16 +231,19 @@ class fi_bank(models.Model):
     amount_maravedies_for_shops = fields.Float('Amount maravedies for shops',compute='_get_maravedies_reserved')
     amount_maravedies_for_banking = fields.Float(compute='_get_amount_available_maravedies',string="Amount maravedies in Central Bank")
     amount_euros_cash_euros_results = fields.Float(compute='_get_amount_available_euros',string="Amount cash euros in Central Bank")
-    amount_total_euros_results_from_bank = fields.Float(compute='_get_amount_total_euros_results',string="Amount total euros results")
     total_maravedies_changed = fields.Float('Total maravedies changed (Real Time)',compute='_get_total_maravedies_changed_by_operations')
     cashplaces = fields.One2many('fi.bankplace','centralbank_id')
     return_cashplaces = fields.One2many('fi.return.bankplace','centralbank_id')
     operations = fields.One2many('fi.bankoperation','centralbank_id')
+    bankloans = fields.One2many('fi.bankloan','centralbank_id')
+    total_loans = fields.Float('Total initial loans',compute='_get_total_loans')
     vouchers_payment = fields.One2many('account.voucher','centralbank_id',compute='_get_vouchers_payment')
     vouchers_entry = fields.One2many('account.voucher','centralbank_id',compute='_get_vouchers_entry')
     total_entries = fields.Float('Total entries',compute='_get_total_entries')
     total_payments = fields.Float('Total payments',compute='_get_total_payments')
     vouchers_balance = fields.Float('Vouchers Balance',compute='_get_vouchers_balance')
+    bank_benefit = fields.Float('Bank Benefit',compute='_get_bank_benefit')
+    bank_conclusions = fields.Text('Bank conclusions')
 
     #cashing out
     co_total_m_changed = fields.Float('Total Maravedies changed (cashing out)',compute='_co_get_total_m_changed')

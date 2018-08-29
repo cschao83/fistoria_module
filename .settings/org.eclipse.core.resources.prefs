@@ -5,6 +5,7 @@ encoding//alia_base_istoria/model/__init__.py=utf-8
 encoding//alia_base_istoria/model/account_voucher.py=utf-8
 encoding//alia_base_istoria/model/fi_artisan_type.py=utf-8
 encoding//alia_base_istoria/model/fi_bank.py=utf-8
+encoding//alia_base_istoria/model/fi_bankloan.py=utf-8
 encoding//alia_base_istoria/model/fi_bankoperation.py=utf-8
 encoding//alia_base_istoria/model/fi_bankplace.py=utf-8
 encoding//alia_base_istoria/model/fi_bankturn.py=utf-8

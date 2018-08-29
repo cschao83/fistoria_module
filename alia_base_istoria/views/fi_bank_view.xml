@@ -16,6 +16,7 @@
 							<field name="campaign_id"/>
 							<field name="amount_maravedies_provided" readonly="True"/>
 							<field name="amount_maravedies_for_shops" readonly="True"/>
+							<field name="total_loans" readonly="True"/>
 						</group>
 						<group>
 							<separator string="CBank Operations" style="width:100%"/>
@@ -33,7 +34,7 @@
 							<newline/>
     						<field name="amount_maravedies_for_banking" readonly="True"/>
     						<field name="amount_euros_cash_euros_results" readonly="True"/>
-    						<field name="amount_total_euros_results_from_bank" readonly="True"/>
+    						<field name="bank_benefit" readonly="True"/>
     					</group>
     					<group>
     						<separator string="Entry/Payment"/>
@@ -44,11 +45,11 @@
     					</group>
     				</group>
     				<group>
-    					<group>
+<!--     					<group>
 							<separator string="Data rt Operations"/>
 							<newline/>
 							<field name="total_maravedies_changed" readonly="True"/>
-    					</group>
+    					</group> -->
     					<group>
     						<separator string="Data Cashing Out"/>
 							<newline/>
@@ -58,6 +59,9 @@
                         	<field name="co_total_e_returned"/>
                         	<field name="co_total_e_not_returned"/>
     					</group>
+    					<group>
+    						<field name="bank_conclusions"/>
+    					</group>
     				</group>
 					<notebook colspan="4">
                         <page string="Money supplied">
@@ -65,6 +69,14 @@
                         		<tree editable="bottom">
                         			<field name="money_type"/>
                         			<field name="qty"/>
+                        		</tree>
+                        	</field>
+                        </page>
+                        <page string="Initial Loans">
+                        	<field name="bankloans">
+                        		<tree editable="bottom">
+                        			<field name="name"/>
+                        			<field name="amount"/>
                         		</tree>
                         	</field>
                         </page>
@@ -150,7 +162,7 @@
 					<field name="co_total_e_returned" />
 					<field name="vouchers_balance" />
 					<field name="amount_euros_cash_euros_results" />
-    				<field name="amount_total_euros_results_from_bank"/>
+    				<field name="bank_benefit"/>
 				</tree>
 			</field>
 		</record>
