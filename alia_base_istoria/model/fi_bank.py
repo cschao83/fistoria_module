@@ -209,7 +209,7 @@ class fi_bank(models.Model):
 
     @api.one
     def _co_get_total_e_not_returned(self):
-        self.co_total_e_not_returned = self.co_total_m_changed - self.co_total_e_returned
+        self.co_total_e_not_returned = (self.co_total_e_got * 0.9) - self.co_total_e_returned
 
     @api.one
     def _get_bank_benefit(self):
