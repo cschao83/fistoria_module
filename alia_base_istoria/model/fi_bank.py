@@ -197,12 +197,21 @@ class fi_bank(models.Model):
         self.co_total_e_got = total
 
     @api.one
+    @api.depends('cashplaces')
+    def _co_get_total_e_obtained_without_paycard(self):
+        total = 0.0
+        for c in self.cashplaces:
+            total = total + c.co_total_e_got - c.co_total_e_paycard
+        self.co_total_e_cash_got = total
+
+    @api.one
     @api.depends('return_cashplaces')
     def _co_get_total_e_returned(self):
         total = 0.0
         for c in self.return_cashplaces:
             total = total + c.co_total_difference
         self.co_total_e_returned = total
+
 
     name = fields.Char('Name')
     campaign_id = fields.Many2one('fi.campaign',string='Campaign')
@@ -223,8 +232,9 @@ class fi_bank(models.Model):
     vouchers_balance = fields.Float('Vouchers Balance',compute='_get_vouchers_balance')
 
     #cashing out
-    co_total_m_changed = fields.Float('Total Maravedies changed (cashing out)',compute='_co_get_total_m_changed',store=True)
-    co_total_e_got = fields.Float('Total euros obtained (cashing out)',compute='_co_get_total_e_obtained',store=True)
+    co_total_m_changed = fields.Float('Total Maravedies changed (cashing out)',compute='_co_get_total_m_changed')
+    co_total_e_cash_got = fields.Float('Total euros obtained in cash (cashing out)',compute='_co_get_total_e_obtained_without_paycard')
+    co_total_e_got = fields.Float('Total euros obtained adding paycard (cashing out)',compute='_co_get_total_e_obtained')
     co_total_e_returned = fields.Float('Total euros returned (cashing out)',compute='_co_get_total_e_returned')
 
 
