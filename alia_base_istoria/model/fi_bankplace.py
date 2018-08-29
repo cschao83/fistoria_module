@@ -58,7 +58,7 @@ class fi_bankplace(models.Model):
         for t in self.bank_turns:
             if t.state in ['closed']:
                 total = total + t.co_euros_difference
-        self.co_total_difference = total
+        self.co_total_difference = total + self.co_total_e_paycard
 
 
     place_id = fields.Many2one('fi.place', 'Place', required=True, ondelete="cascade", select=True, auto_join=True)
@@ -74,6 +74,7 @@ class fi_bankplace(models.Model):
     co_total_m_changed = fields.Float('Total Maravedies changed (cashing out)',compute='_co_get_total_maravedies_changed')
     co_total_e_got = fields.Float('Total euros obtained (cashing out)',compute='_co_get_total_euros_obtained')
     co_total_difference = fields.Float('Total euros difference (cashing out)',compute='_co_get_total_difference')
+    co_total_e_paycard = fields.Float('Total euros by paycard (cashing out)')
 
     #rt operations
     total_m_changed = fields.Float(compute='_total_changed',string='Total Maravedies changed')
