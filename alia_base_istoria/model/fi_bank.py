@@ -221,7 +221,7 @@ class fi_bank(models.Model):
     def _co_get_lost_and_mistakes(self):
         total = 0.0
         for c in self.cashplaces:
-            total += c.co_euros_difference
+            total += c.co_total_difference
         self.co_total_e_lost = total
 
     @api.one
