@@ -218,6 +218,13 @@ class fi_bank(models.Model):
         self.bank_benefit = benefit
 
     @api.one
+    def _co_get_lost_and_mistakes(self):
+        total = 0.0
+        for c in self.cashplaces:
+            total += c.co_euros_difference
+        self.co_total_e_lost = total
+
+    @api.one
     def _get_total_loans(self):
         total = 0.0
         for l in self.bankloans:
@@ -246,6 +253,7 @@ class fi_bank(models.Model):
     bank_conclusions = fields.Text('Bank conclusions')
 
     #cashing out
+    co_total_e_lost = fields.Float('Lost or Mistakes (€)',compute='_co_get_lost_and_mistakes')
     co_total_m_changed = fields.Float('Total Maravedies changed (cashing out)',compute='_co_get_total_m_changed')
     co_total_e_cash_got = fields.Float('Total euros obtained in cash (cashing out)',compute='_co_get_total_e_obtained_without_paycard')
     co_total_e_got = fields.Float('Total euros obtained adding paycard (cashing out)',compute='_co_get_total_e_obtained')
